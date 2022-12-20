@@ -5,11 +5,18 @@
  */
 package javaapplication4;
 
+import java.awt.Color;
+
 /**
  *
  * @author ahmed
  */
 public class Dashboard_cusrtomer extends javax.swing.JFrame {
+    // Colors  global variables
+
+    private int choose = 1;
+    Color blue = Color.decode("#008ABC");
+    Color gray = Color.decode("#6A6A6A");
 
     /**
      * Creates new form login
@@ -27,19 +34,24 @@ public class Dashboard_cusrtomer extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        User_Name = new javax.swing.JLabel();
         navbar = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        nav_Dashboard = new javax.swing.JLabel();
+        nav_Bills = new javax.swing.JLabel();
+        nav_Accounts = new javax.swing.JLabel();
+        nav_Settings = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         Dashboard = new javax.swing.JPanel();
+        total_coast = new javax.swing.JLabel();
+        no_tobe_paid = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         Bills = new javax.swing.JPanel();
         account = new javax.swing.JPanel();
         settings = new javax.swing.JPanel();
+        just_a_panel = new javax.swing.JPanel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -50,31 +62,77 @@ public class Dashboard_cusrtomer extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 176, 239));
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 940, 1320, 30));
+        User_Name.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        User_Name.setForeground(new java.awt.Color(17, 43, 60));
+        User_Name.setText("USER");
+        getContentPane().add(User_Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 90, 160, 50));
 
         navbar.setOpaque(false);
         navbar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 138, 188));
-        jLabel6.setText("Dashboard");
-        navbar.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 150, 30));
+        nav_Dashboard.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        nav_Dashboard.setForeground(new java.awt.Color(0, 138, 188));
+        nav_Dashboard.setText("Dashboard");
+        nav_Dashboard.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nav_DashboardMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                nav_DashboardMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                nav_DashboardMouseExited(evt);
+            }
+        });
+        navbar.add(nav_Dashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 150, 30));
 
-        jLabel7.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(106, 106, 106));
-        jLabel7.setText("Bills");
-        navbar.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 50, 30));
+        nav_Bills.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        nav_Bills.setForeground(new java.awt.Color(106, 106, 106));
+        nav_Bills.setText("Bills");
+        nav_Bills.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nav_BillsMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                nav_BillsMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                nav_BillsMouseExited(evt);
+            }
+        });
+        navbar.add(nav_Bills, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 60, 30));
 
-        jLabel8.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(106, 106, 106));
-        jLabel8.setText("Accounts");
-        navbar.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 20, 120, 30));
+        nav_Accounts.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        nav_Accounts.setForeground(new java.awt.Color(106, 106, 106));
+        nav_Accounts.setText("Accounts");
+        nav_Accounts.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nav_AccountsMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                nav_AccountsMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                nav_AccountsMouseExited(evt);
+            }
+        });
+        navbar.add(nav_Accounts, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 20, 120, 30));
 
-        jLabel9.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(106, 106, 106));
-        jLabel9.setText("Settings");
-        navbar.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 20, 110, 30));
+        nav_Settings.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        nav_Settings.setForeground(new java.awt.Color(106, 106, 106));
+        nav_Settings.setText("Settings");
+        nav_Settings.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nav_SettingsMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                nav_SettingsMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                nav_SettingsMouseExited(evt);
+            }
+        });
+        navbar.add(nav_Settings, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 20, 110, 30));
 
         getContentPane().add(navbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 1300, 70));
 
@@ -88,6 +146,16 @@ public class Dashboard_cusrtomer extends javax.swing.JFrame {
         Dashboard.setOpaque(false);
         Dashboard.setPreferredSize(new java.awt.Dimension(1318, 723));
         Dashboard.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        total_coast.setFont(new java.awt.Font("Dialog", 1, 26)); // NOI18N
+        total_coast.setForeground(new java.awt.Color(51, 255, 51));
+        total_coast.setText("NO.");
+        Dashboard.add(total_coast, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 100, 60));
+
+        no_tobe_paid.setFont(new java.awt.Font("Dialog", 1, 26)); // NOI18N
+        no_tobe_paid.setForeground(new java.awt.Color(51, 255, 51));
+        no_tobe_paid.setText("NO.");
+        Dashboard.add(no_tobe_paid, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 80, 90, 60));
 
         jTable1.setBackground(new java.awt.Color(228, 238, 242));
         jTable1.setForeground(new java.awt.Color(0, 138, 188));
@@ -106,22 +174,148 @@ public class Dashboard_cusrtomer extends javax.swing.JFrame {
         jTable1.setRowHeight(35);
         jScrollPane1.setViewportView(jTable1);
 
-        Dashboard.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 1230, 350));
+        Dashboard.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 1230, 350));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Number of bills card.png"))); // NOI18N
+        Dashboard.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 490, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Total cost card.png"))); // NOI18N
+        Dashboard.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 10, 520, -1));
 
         jTabbedPane1.addTab("tab1", Dashboard);
+
+        Bills.setOpaque(false);
         jTabbedPane1.addTab("tab4", Bills);
+
+        account.setOpaque(false);
         jTabbedPane1.addTab("tab5", account);
+
+        settings.setOpaque(false);
         jTabbedPane1.addTab("tab2", settings);
 
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 440, 1320, 530));
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 1320, 750));
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Dashboard Customer (1).png"))); // NOI18N
+        just_a_panel.setBackground(new java.awt.Color(0, 176, 239));
+        getContentPane().add(just_a_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 940, 1320, 30));
+
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Dashboard Customer (2).png"))); // NOI18N
         background.setText("jLabel2");
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, 0, 1500, -1));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void nav_BillsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nav_BillsMouseClicked
+        // TODO add your handling code here:
+        choose = 2;
+        jTabbedPane1.setSelectedIndex(1);
+        nav_Bills.setForeground(blue);
+        nav_Dashboard.setForeground(gray);
+        nav_Accounts.setForeground(gray);
+        nav_Settings.setForeground(gray);
+        nav_Bills.setText("Bills");
+
+    }//GEN-LAST:event_nav_BillsMouseClicked
+
+    private void nav_BillsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nav_BillsMouseEntered
+        // TODO add your handling code here:
+        if (choose == 2) {
+        } else {
+            String underline = "<HTML><u>Bills</u></HTML>";
+            nav_Bills.setText(underline);
+        }
+    }//GEN-LAST:event_nav_BillsMouseEntered
+
+    private void nav_BillsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nav_BillsMouseExited
+        // TODO add your handling code here:
+        nav_Bills.setText("Bills");
+    }//GEN-LAST:event_nav_BillsMouseExited
+
+    private void nav_DashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nav_DashboardMouseClicked
+        // TODO add your handling code here:
+        choose = 1;
+        jTabbedPane1.setSelectedIndex(0);
+        nav_Dashboard.setForeground(blue);
+        nav_Bills.setForeground(gray);
+        nav_Accounts.setForeground(gray);
+        nav_Settings.setForeground(gray);
+        nav_Dashboard.setText("Dashboard");
+
+    }//GEN-LAST:event_nav_DashboardMouseClicked
+
+    private void nav_DashboardMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nav_DashboardMouseEntered
+        // TODO add your handling code here:
+        if (choose == 1) {
+        } else {
+            String underline = "<HTML><u>Dashboard</u></HTML>";
+            nav_Dashboard.setText(underline);
+        }
+
+    }//GEN-LAST:event_nav_DashboardMouseEntered
+
+    private void nav_DashboardMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nav_DashboardMouseExited
+        // TODO add your handling code here:
+        nav_Dashboard.setText("Dashboard");
+    }//GEN-LAST:event_nav_DashboardMouseExited
+
+    private void nav_AccountsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nav_AccountsMouseClicked
+        // TODO add your handling code here:
+        choose = 3;
+        jTabbedPane1.setSelectedIndex(2);
+        nav_Dashboard.setForeground(gray);
+        nav_Bills.setForeground(gray);
+        nav_Accounts.setForeground(blue);
+        nav_Settings.setForeground(gray);
+        nav_Accounts.setText("Accounts");
+
+    }//GEN-LAST:event_nav_AccountsMouseClicked
+
+    private void nav_AccountsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nav_AccountsMouseEntered
+        // TODO add your handling code here:
+        if (choose == 3) {
+        } else {
+            String underline = "<HTML><u>Accounts</u></HTML>";
+            nav_Accounts.setText(underline);
+
+        }
+    }//GEN-LAST:event_nav_AccountsMouseEntered
+
+    private void nav_AccountsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nav_AccountsMouseExited
+        // TODO add your handling code here:
+        nav_Accounts.setText("Accounts");
+
+    }//GEN-LAST:event_nav_AccountsMouseExited
+
+    private void nav_SettingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nav_SettingsMouseClicked
+        // TODO add your handling code here:
+        choose = 4;
+
+        jTabbedPane1.setSelectedIndex(3);
+        nav_Dashboard.setForeground(gray);
+        nav_Bills.setForeground(gray);
+        nav_Accounts.setForeground(gray);
+        nav_Settings.setForeground(blue);
+        nav_Settings.setText("Settings");
+
+    }//GEN-LAST:event_nav_SettingsMouseClicked
+
+    private void nav_SettingsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nav_SettingsMouseEntered
+        // TODO add your handling code here:
+        if (choose == 4) {
+        } else {
+            String underline = "<HTML><u>Settings</u></HTML>";
+            nav_Settings.setText(underline);
+
+        }
+
+    }//GEN-LAST:event_nav_SettingsMouseEntered
+
+    private void nav_SettingsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nav_SettingsMouseExited
+        // TODO add your handling code here:
+        nav_Settings.setText("Settings");
+
+    }//GEN-LAST:event_nav_SettingsMouseExited
 
     /**
      * @param args the command line arguments
@@ -162,17 +356,22 @@ public class Dashboard_cusrtomer extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Bills;
     private javax.swing.JPanel Dashboard;
+    private javax.swing.JLabel User_Name;
     private javax.swing.JPanel account;
     private javax.swing.JLabel background;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JPanel just_a_panel;
+    private javax.swing.JLabel nav_Accounts;
+    private javax.swing.JLabel nav_Bills;
+    private javax.swing.JLabel nav_Dashboard;
+    private javax.swing.JLabel nav_Settings;
     private javax.swing.JPanel navbar;
+    private javax.swing.JLabel no_tobe_paid;
     private javax.swing.JPanel settings;
+    private javax.swing.JLabel total_coast;
     // End of variables declaration//GEN-END:variables
 }
