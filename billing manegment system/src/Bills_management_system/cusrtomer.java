@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication4;
+package Bills_management_system;
 
 import java.awt.Color;
 
@@ -11,7 +11,7 @@ import java.awt.Color;
  *
  * @author ahmed
  */
-public class Dashboard_cusrtomer extends javax.swing.JFrame {
+public class cusrtomer extends javax.swing.JFrame {
     // Colors  global variables
 
     private int choose = 1;
@@ -21,7 +21,7 @@ public class Dashboard_cusrtomer extends javax.swing.JFrame {
     /**
      * Creates new form login
      */
-    public Dashboard_cusrtomer() {
+    public cusrtomer() {
         initComponents();
     }
 
@@ -34,33 +34,45 @@ public class Dashboard_cusrtomer extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        just_a_panel = new javax.swing.JPanel();
         User_Name = new javax.swing.JLabel();
         navbar = new javax.swing.JPanel();
         nav_Dashboard = new javax.swing.JLabel();
         nav_Bills = new javax.swing.JLabel();
         nav_Accounts = new javax.swing.JLabel();
         nav_Settings = new javax.swing.JLabel();
+        Billls_icon = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         Dashboard = new javax.swing.JPanel();
         total_coast = new javax.swing.JLabel();
         no_tobe_paid = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        Dashboard_table = new javax.swing.JTable();
+        total_coast_card = new javax.swing.JLabel();
+        total_no_bill_card = new javax.swing.JLabel();
         Bills = new javax.swing.JPanel();
+        total_coast_bills = new javax.swing.JLabel();
+        no_tobe_paid_bills = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Dashboard_table1 = new javax.swing.JTable();
+        total_coast_card_bills = new javax.swing.JLabel();
+        total_no_bill_card_bills = new javax.swing.JLabel();
         account = new javax.swing.JPanel();
         settings = new javax.swing.JPanel();
-        just_a_panel = new javax.swing.JPanel();
         background = new javax.swing.JLabel();
+        Dashboard_icon = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMaximumSize(new java.awt.Dimension(1440, 1024));
-        setMinimumSize(new java.awt.Dimension(1440, 1024));
-        setPreferredSize(new java.awt.Dimension(1440, 1024));
+        setMaximumSize(new java.awt.Dimension(1420, 1024));
+        setMinimumSize(new java.awt.Dimension(1420, 1024));
+        setPreferredSize(new java.awt.Dimension(1420, 1024));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        just_a_panel.setBackground(new java.awt.Color(0, 176, 239));
+        getContentPane().add(just_a_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 940, 1320, 30));
 
         User_Name.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         User_Name.setForeground(new java.awt.Color(17, 43, 60));
@@ -72,6 +84,7 @@ public class Dashboard_cusrtomer extends javax.swing.JFrame {
 
         nav_Dashboard.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         nav_Dashboard.setForeground(new java.awt.Color(0, 138, 188));
+        nav_Dashboard.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         nav_Dashboard.setText("Dashboard");
         nav_Dashboard.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -84,10 +97,11 @@ public class Dashboard_cusrtomer extends javax.swing.JFrame {
                 nav_DashboardMouseExited(evt);
             }
         });
-        navbar.add(nav_Dashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 150, 30));
+        navbar.add(nav_Dashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 170, 40));
 
         nav_Bills.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         nav_Bills.setForeground(new java.awt.Color(106, 106, 106));
+        nav_Bills.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         nav_Bills.setText("Bills");
         nav_Bills.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -100,10 +114,11 @@ public class Dashboard_cusrtomer extends javax.swing.JFrame {
                 nav_BillsMouseExited(evt);
             }
         });
-        navbar.add(nav_Bills, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 60, 30));
+        navbar.add(nav_Bills, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 90, 40));
 
         nav_Accounts.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         nav_Accounts.setForeground(new java.awt.Color(106, 106, 106));
+        nav_Accounts.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         nav_Accounts.setText("Accounts");
         nav_Accounts.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -116,10 +131,11 @@ public class Dashboard_cusrtomer extends javax.swing.JFrame {
                 nav_AccountsMouseExited(evt);
             }
         });
-        navbar.add(nav_Accounts, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 20, 120, 30));
+        navbar.add(nav_Accounts, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 150, 40));
 
         nav_Settings.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         nav_Settings.setForeground(new java.awt.Color(106, 106, 106));
+        nav_Settings.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         nav_Settings.setText("Settings");
         nav_Settings.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -132,7 +148,9 @@ public class Dashboard_cusrtomer extends javax.swing.JFrame {
                 nav_SettingsMouseExited(evt);
             }
         });
-        navbar.add(nav_Settings, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 20, 110, 30));
+        navbar.add(nav_Settings, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 0, 140, 60));
+        navbar.add(Billls_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 10, 40, 50));
+        navbar.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 30, 40));
 
         getContentPane().add(navbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 1300, 70));
 
@@ -157,9 +175,9 @@ public class Dashboard_cusrtomer extends javax.swing.JFrame {
         no_tobe_paid.setText("NO.");
         Dashboard.add(no_tobe_paid, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 80, 90, 60));
 
-        jTable1.setBackground(new java.awt.Color(228, 238, 242));
-        jTable1.setForeground(new java.awt.Color(0, 138, 188));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        Dashboard_table.setBackground(new java.awt.Color(228, 238, 242));
+        Dashboard_table.setForeground(new java.awt.Color(0, 138, 188));
+        Dashboard_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -170,21 +188,58 @@ public class Dashboard_cusrtomer extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jTable1.setPreferredSize(new java.awt.Dimension(535, 1320));
-        jTable1.setRowHeight(35);
-        jScrollPane1.setViewportView(jTable1);
+        Dashboard_table.setPreferredSize(new java.awt.Dimension(535, 1320));
+        Dashboard_table.setRowHeight(35);
+        jScrollPane1.setViewportView(Dashboard_table);
 
         Dashboard.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 1230, 350));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Number of bills card.png"))); // NOI18N
-        Dashboard.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 490, -1));
+        total_coast_card.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Number of bills card.png"))); // NOI18N
+        Dashboard.add(total_coast_card, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 490, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Total cost card.png"))); // NOI18N
-        Dashboard.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 10, 520, -1));
+        total_no_bill_card.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Total cost card.png"))); // NOI18N
+        Dashboard.add(total_no_bill_card, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 10, 520, -1));
 
         jTabbedPane1.addTab("tab1", Dashboard);
 
         Bills.setOpaque(false);
+        Bills.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        total_coast_bills.setFont(new java.awt.Font("Dialog", 1, 26)); // NOI18N
+        total_coast_bills.setForeground(new java.awt.Color(51, 255, 51));
+        total_coast_bills.setText("NO.");
+        Bills.add(total_coast_bills, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 100, 60));
+
+        no_tobe_paid_bills.setFont(new java.awt.Font("Dialog", 1, 26)); // NOI18N
+        no_tobe_paid_bills.setForeground(new java.awt.Color(51, 255, 51));
+        no_tobe_paid_bills.setText("NO.");
+        Bills.add(no_tobe_paid_bills, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 80, 90, 60));
+
+        Dashboard_table1.setBackground(new java.awt.Color(228, 238, 242));
+        Dashboard_table1.setForeground(new java.awt.Color(0, 138, 188));
+        Dashboard_table1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        Dashboard_table1.setPreferredSize(new java.awt.Dimension(535, 1320));
+        Dashboard_table1.setRowHeight(35);
+        jScrollPane2.setViewportView(Dashboard_table1);
+
+        Bills.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 1230, 350));
+
+        total_coast_card_bills.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Number of bills card.png"))); // NOI18N
+        Bills.add(total_coast_card_bills, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 490, -1));
+
+        total_no_bill_card_bills.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Total cost card.png"))); // NOI18N
+        Bills.add(total_no_bill_card_bills, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 10, 520, -1));
+
         jTabbedPane1.addTab("tab4", Bills);
 
         account.setOpaque(false);
@@ -195,12 +250,9 @@ public class Dashboard_cusrtomer extends javax.swing.JFrame {
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 1320, 750));
 
-        just_a_panel.setBackground(new java.awt.Color(0, 176, 239));
-        getContentPane().add(just_a_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 940, 1320, 30));
-
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Dashboard Customer (2).png"))); // NOI18N
-        background.setText("jLabel2");
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, 0, 1500, -1));
+        getContentPane().add(Dashboard_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 40, 40));
 
         pack();
         setLocationRelativeTo(null);
@@ -290,7 +342,7 @@ public class Dashboard_cusrtomer extends javax.swing.JFrame {
     private void nav_SettingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nav_SettingsMouseClicked
         // TODO add your handling code here:
         choose = 4;
-
+        
         jTabbedPane1.setSelectedIndex(3);
         nav_Dashboard.setForeground(gray);
         nav_Bills.setForeground(gray);
@@ -334,36 +386,40 @@ public class Dashboard_cusrtomer extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Dashboard_cusrtomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cusrtomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Dashboard_cusrtomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cusrtomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Dashboard_cusrtomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cusrtomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Dashboard_cusrtomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cusrtomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Dashboard_cusrtomer().setVisible(true);
+                new cusrtomer().setVisible(true);
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Billls_icon;
     private javax.swing.JPanel Bills;
     private javax.swing.JPanel Dashboard;
+    private javax.swing.JLabel Dashboard_icon;
+    private javax.swing.JTable Dashboard_table;
+    private javax.swing.JTable Dashboard_table1;
     private javax.swing.JLabel User_Name;
     private javax.swing.JPanel account;
     private javax.swing.JLabel background;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JPanel just_a_panel;
     private javax.swing.JLabel nav_Accounts;
     private javax.swing.JLabel nav_Bills;
@@ -371,7 +427,13 @@ public class Dashboard_cusrtomer extends javax.swing.JFrame {
     private javax.swing.JLabel nav_Settings;
     private javax.swing.JPanel navbar;
     private javax.swing.JLabel no_tobe_paid;
+    private javax.swing.JLabel no_tobe_paid_bills;
     private javax.swing.JPanel settings;
     private javax.swing.JLabel total_coast;
+    private javax.swing.JLabel total_coast_bills;
+    private javax.swing.JLabel total_coast_card;
+    private javax.swing.JLabel total_coast_card_bills;
+    private javax.swing.JLabel total_no_bill_card;
+    private javax.swing.JLabel total_no_bill_card_bills;
     // End of variables declaration//GEN-END:variables
 }

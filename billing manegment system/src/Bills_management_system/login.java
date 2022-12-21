@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication4;
+package Bills_management_system;
 
 /**
  *
@@ -45,8 +45,7 @@ public class login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMaximumSize(new java.awt.Dimension(400, 600));
-        setMinimumSize(new java.awt.Dimension(400, 600));
+        setMinimumSize(new java.awt.Dimension(400, 630));
         setPreferredSize(new java.awt.Dimension(400, 630));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -74,6 +73,12 @@ public class login extends javax.swing.JFrame {
         register_now.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 register_nowMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                register_nowMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                register_nowMouseExited(evt);
             }
         });
         login.add(register_now, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 440, 130, 30));
@@ -192,6 +197,17 @@ public class login extends javax.swing.JFrame {
         // TODO add your handling code here:
         forgot_password.setText("Forgot pasword?");
     }//GEN-LAST:event_forgot_passwordMouseExited
+
+    private void register_nowMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_register_nowMouseEntered
+        // TODO add your handling code here:
+        String underline="<HTML><u>Register now</u></HTML>";
+        register_now.setText(underline);
+    }//GEN-LAST:event_register_nowMouseEntered
+
+    private void register_nowMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_register_nowMouseExited
+        // TODO add your handling code here:
+        register_now.setText("Register now");
+    }//GEN-LAST:event_register_nowMouseExited
 
     /**
      * @param args the command line arguments
