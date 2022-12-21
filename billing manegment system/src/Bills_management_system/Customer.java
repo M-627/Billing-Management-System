@@ -5,7 +5,15 @@
  */
 package Bills_management_system;
 
+import com.formdev.flatlaf.FlatDarkLaf;
+import java.awt.BorderLayout;
 import java.awt.Color;
+import javax.swing.UIManager;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PiePlot;
+import org.jfree.data.general.DefaultPieDataset;
 
 /**
  *
@@ -13,6 +21,11 @@ import java.awt.Color;
  */
 public class Customer extends javax.swing.JFrame {
     // Colors  global variables
+    
+    
+    public void showPieChart() {} /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        
 
     private int choose = 1;
     Color blue = Color.decode("#008ABC");
@@ -34,48 +47,49 @@ public class Customer extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        MainPanel = new javax.swing.JPanel();
-        User_Name = new javax.swing.JLabel();
+        TrickeyPanel = new javax.swing.JPanel();
+        UserName = new javax.swing.JLabel();
         NavBar = new javax.swing.JPanel();
         NavDashboard = new javax.swing.JLabel();
         NavBills = new javax.swing.JLabel();
         NavAccounts = new javax.swing.JLabel();
         NavSettings = new javax.swing.JLabel();
-        Billls_icon = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         Dashboard = new javax.swing.JPanel();
-        total_coast = new javax.swing.JLabel();
-        no_tobe_paid = new javax.swing.JLabel();
+        NunberOfBills = new javax.swing.JLabel();
+        TotalCost = new javax.swing.JLabel();
+        BillsNumberCard = new javax.swing.JLabel();
+        TotalCostCard = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        Dashboard_table = new javax.swing.JTable();
-        total_coast_card = new javax.swing.JLabel();
-        total_no_bill_card = new javax.swing.JLabel();
+        DashboardTable = new javax.swing.JTable();
+        panelBarChart = new javax.swing.JPanel();
         Bills = new javax.swing.JPanel();
-        total_coast_bills = new javax.swing.JLabel();
-        no_tobe_paid_bills = new javax.swing.JLabel();
+        NumberOfBills = new javax.swing.JLabel();
+        TotalCostOfBills = new javax.swing.JLabel();
+        TotalNumberOfBillsCard = new javax.swing.JLabel();
+        TotalCostOfBillsCard = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        Dashboard_table1 = new javax.swing.JTable();
-        total_coast_card_bills = new javax.swing.JLabel();
-        total_no_bill_card_bills = new javax.swing.JLabel();
-        account = new javax.swing.JPanel();
-        settings = new javax.swing.JPanel();
+        BillsTable = new javax.swing.JTable();
+        panelBarChart1 = new javax.swing.JPanel();
+        Acounts = new javax.swing.JPanel();
+        Settings = new javax.swing.JPanel();
         background = new javax.swing.JLabel();
-        Dashboard_icon = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMinimumSize(new java.awt.Dimension(1420, 1024));
+        setMaximumSize(new java.awt.Dimension(1440, 1024));
+        setMinimumSize(new java.awt.Dimension(1440, 1024));
+        setPreferredSize(new java.awt.Dimension(1440, 1024));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        MainPanel.setBackground(new java.awt.Color(0, 176, 239));
-        getContentPane().add(MainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 940, 1320, 30));
+        TrickeyPanel.setBackground(new java.awt.Color(0, 176, 239));
+        getContentPane().add(TrickeyPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 920, 1320, 50));
 
-        User_Name.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        User_Name.setForeground(new java.awt.Color(17, 43, 60));
-        User_Name.setText("USER");
-        getContentPane().add(User_Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 90, 160, 50));
+        UserName.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        UserName.setForeground(new java.awt.Color(17, 43, 60));
+        UserName.setText("USER");
+        getContentPane().add(UserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 90, 160, 50));
 
         NavBar.setOpaque(false);
         NavBar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -129,7 +143,7 @@ public class Customer extends javax.swing.JFrame {
                 NavAccountsMouseExited(evt);
             }
         });
-        NavBar.add(NavAccounts, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 150, 40));
+        NavBar.add(NavAccounts, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 150, 50));
 
         NavSettings.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         NavSettings.setForeground(new java.awt.Color(106, 106, 106));
@@ -146,36 +160,42 @@ public class Customer extends javax.swing.JFrame {
                 NavSettingsMouseExited(evt);
             }
         });
-        NavBar.add(NavSettings, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 0, 140, 60));
-        NavBar.add(Billls_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 10, 40, 50));
-        NavBar.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 30, 40));
+        NavBar.add(NavSettings, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 10, 140, 50));
 
         getContentPane().add(NavBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 1300, 70));
 
         jTabbedPane1.setBackground(new java.awt.Color(217, 217, 217));
         jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
-        jTabbedPane1.setMaximumSize(new java.awt.Dimension(400, 600));
-        jTabbedPane1.setMinimumSize(new java.awt.Dimension(400, 600));
-        jTabbedPane1.setPreferredSize(new java.awt.Dimension(400, 650));
+        jTabbedPane1.setMaximumSize(new java.awt.Dimension(1320, 750));
+        jTabbedPane1.setMinimumSize(new java.awt.Dimension(1320, 750));
+        jTabbedPane1.setPreferredSize(new java.awt.Dimension(1320, 750));
 
         Dashboard.setBackground(new java.awt.Color(217, 217, 217));
+        Dashboard.setMaximumSize(new java.awt.Dimension(1320, 750));
+        Dashboard.setMinimumSize(new java.awt.Dimension(1320, 750));
         Dashboard.setOpaque(false);
-        Dashboard.setPreferredSize(new java.awt.Dimension(1318, 723));
+        Dashboard.setPreferredSize(new java.awt.Dimension(1320, 750));
         Dashboard.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        total_coast.setFont(new java.awt.Font("Dialog", 1, 26)); // NOI18N
-        total_coast.setForeground(new java.awt.Color(51, 255, 51));
-        total_coast.setText("NO.");
-        Dashboard.add(total_coast, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 100, 60));
+        NunberOfBills.setFont(new java.awt.Font("Dialog", 1, 26)); // NOI18N
+        NunberOfBills.setForeground(new java.awt.Color(51, 255, 51));
+        NunberOfBills.setText("NO.");
+        Dashboard.add(NunberOfBills, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 100, 60));
 
-        no_tobe_paid.setFont(new java.awt.Font("Dialog", 1, 26)); // NOI18N
-        no_tobe_paid.setForeground(new java.awt.Color(51, 255, 51));
-        no_tobe_paid.setText("NO.");
-        Dashboard.add(no_tobe_paid, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 80, 90, 60));
+        TotalCost.setFont(new java.awt.Font("Dialog", 1, 26)); // NOI18N
+        TotalCost.setForeground(new java.awt.Color(51, 255, 51));
+        TotalCost.setText("NO.");
+        Dashboard.add(TotalCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 80, 90, 60));
 
-        Dashboard_table.setBackground(new java.awt.Color(228, 238, 242));
-        Dashboard_table.setForeground(new java.awt.Color(0, 138, 188));
-        Dashboard_table.setModel(new javax.swing.table.DefaultTableModel(
+        BillsNumberCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Number of bills card.png"))); // NOI18N
+        Dashboard.add(BillsNumberCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 490, -1));
+
+        TotalCostCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Total cost card.png"))); // NOI18N
+        Dashboard.add(TotalCostCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 10, 520, -1));
+
+        DashboardTable.setBackground(new java.awt.Color(51, 51, 55));
+        DashboardTable.setForeground(new java.awt.Color(255, 255, 255));
+        DashboardTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -186,36 +206,47 @@ public class Customer extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        Dashboard_table.setPreferredSize(new java.awt.Dimension(535, 1320));
-        Dashboard_table.setRowHeight(35);
-        jScrollPane1.setViewportView(Dashboard_table);
+        DashboardTable.setPreferredSize(new java.awt.Dimension(535, 1320));
+        DashboardTable.setRowHeight(35);
+        DashboardTable.setSelectionBackground(new java.awt.Color(228, 238, 242));
+        DashboardTable.setSelectionForeground(new java.awt.Color(51, 51, 55));
+        jScrollPane1.setViewportView(DashboardTable);
 
         Dashboard.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 1230, 350));
 
-        total_coast_card.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Number of bills card.png"))); // NOI18N
-        Dashboard.add(total_coast_card, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 490, -1));
-
-        total_no_bill_card.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Total cost card.png"))); // NOI18N
-        Dashboard.add(total_no_bill_card, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 10, 520, -1));
+        panelBarChart.setBackground(new java.awt.Color(50, 50, 50));
+        panelBarChart.setForeground(new java.awt.Color(217, 217, 217));
+        panelBarChart.setPreferredSize(new java.awt.Dimension(540, 346));
+        panelBarChart.setLayout(new java.awt.BorderLayout());
+        Dashboard.add(panelBarChart, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 290, 240));
 
         jTabbedPane1.addTab("tab1", Dashboard);
 
+        Bills.setMaximumSize(new java.awt.Dimension(1320, 750));
+        Bills.setMinimumSize(new java.awt.Dimension(1320, 750));
         Bills.setOpaque(false);
+        Bills.setPreferredSize(new java.awt.Dimension(1320, 750));
         Bills.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        total_coast_bills.setFont(new java.awt.Font("Dialog", 1, 26)); // NOI18N
-        total_coast_bills.setForeground(new java.awt.Color(51, 255, 51));
-        total_coast_bills.setText("NO.");
-        Bills.add(total_coast_bills, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 100, 60));
+        NumberOfBills.setFont(new java.awt.Font("Dialog", 1, 26)); // NOI18N
+        NumberOfBills.setForeground(new java.awt.Color(51, 255, 51));
+        NumberOfBills.setText("NO.");
+        Bills.add(NumberOfBills, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 100, 60));
 
-        no_tobe_paid_bills.setFont(new java.awt.Font("Dialog", 1, 26)); // NOI18N
-        no_tobe_paid_bills.setForeground(new java.awt.Color(51, 255, 51));
-        no_tobe_paid_bills.setText("NO.");
-        Bills.add(no_tobe_paid_bills, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 80, 90, 60));
+        TotalCostOfBills.setFont(new java.awt.Font("Dialog", 1, 26)); // NOI18N
+        TotalCostOfBills.setForeground(new java.awt.Color(51, 255, 51));
+        TotalCostOfBills.setText("NO.");
+        Bills.add(TotalCostOfBills, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 80, 90, 60));
 
-        Dashboard_table1.setBackground(new java.awt.Color(228, 238, 242));
-        Dashboard_table1.setForeground(new java.awt.Color(0, 138, 188));
-        Dashboard_table1.setModel(new javax.swing.table.DefaultTableModel(
+        TotalNumberOfBillsCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Number of bills card.png"))); // NOI18N
+        Bills.add(TotalNumberOfBillsCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 490, -1));
+
+        TotalCostOfBillsCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Total cost card.png"))); // NOI18N
+        Bills.add(TotalCostOfBillsCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 10, 520, -1));
+
+        BillsTable.setBackground(new java.awt.Color(51, 51, 55));
+        BillsTable.setForeground(new java.awt.Color(255, 255, 255));
+        BillsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -226,31 +257,41 @@ public class Customer extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        Dashboard_table1.setPreferredSize(new java.awt.Dimension(535, 1320));
-        Dashboard_table1.setRowHeight(35);
-        jScrollPane2.setViewportView(Dashboard_table1);
+        BillsTable.setPreferredSize(new java.awt.Dimension(535, 1320));
+        BillsTable.setRowHeight(35);
+        BillsTable.setSelectionBackground(new java.awt.Color(228, 238, 242));
+        BillsTable.setSelectionForeground(new java.awt.Color(51, 51, 55));
+        jScrollPane2.setViewportView(BillsTable);
 
         Bills.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 1230, 350));
 
-        total_coast_card_bills.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Number of bills card.png"))); // NOI18N
-        Bills.add(total_coast_card_bills, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 490, -1));
-
-        total_no_bill_card_bills.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Total cost card.png"))); // NOI18N
-        Bills.add(total_no_bill_card_bills, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 10, 520, -1));
+        panelBarChart1.setBackground(new java.awt.Color(50, 50, 50));
+        panelBarChart1.setForeground(new java.awt.Color(217, 217, 217));
+        panelBarChart1.setPreferredSize(new java.awt.Dimension(540, 346));
+        panelBarChart1.setLayout(new java.awt.BorderLayout());
+        Bills.add(panelBarChart1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 300, 220));
 
         jTabbedPane1.addTab("tab4", Bills);
 
-        account.setOpaque(false);
-        jTabbedPane1.addTab("tab5", account);
+        Acounts.setMaximumSize(new java.awt.Dimension(1320, 750));
+        Acounts.setMinimumSize(new java.awt.Dimension(1320, 750));
+        Acounts.setOpaque(false);
+        Acounts.setPreferredSize(new java.awt.Dimension(1320, 750));
+        jTabbedPane1.addTab("tab5", Acounts);
 
-        settings.setOpaque(false);
-        jTabbedPane1.addTab("tab2", settings);
+        Settings.setMaximumSize(new java.awt.Dimension(1320, 750));
+        Settings.setMinimumSize(new java.awt.Dimension(1320, 750));
+        Settings.setOpaque(false);
+        Settings.setPreferredSize(new java.awt.Dimension(1320, 750));
+        jTabbedPane1.addTab("tab2", Settings);
 
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 1320, 750));
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, -1));
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Dashboard Customer (2).png"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Dashboard Customer.png"))); // NOI18N
+        background.setMaximumSize(new java.awt.Dimension(1496, 1032));
+        background.setMinimumSize(new java.awt.Dimension(1496, 1032));
+        background.setPreferredSize(new java.awt.Dimension(1496, 1032));
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, 0, 1500, -1));
-        getContentPane().add(Dashboard_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 40, 40));
 
         pack();
         setLocationRelativeTo(null);
@@ -371,35 +412,13 @@ public class Customer extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
+        try{
+                        UIManager.setLookAndFeel(new FlatDarkLaf());
+
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Customer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Customer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Customer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Customer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        catch (Exception ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -409,33 +428,32 @@ public class Customer extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Billls_icon;
+    private javax.swing.JPanel Acounts;
     private javax.swing.JPanel Bills;
+    private javax.swing.JLabel BillsNumberCard;
+    private javax.swing.JTable BillsTable;
     private javax.swing.JPanel Dashboard;
-    private javax.swing.JLabel Dashboard_icon;
-    private javax.swing.JTable Dashboard_table;
-    private javax.swing.JTable Dashboard_table1;
-    private javax.swing.JPanel MainPanel;
+    private javax.swing.JTable DashboardTable;
     private javax.swing.JLabel NavAccounts;
     private javax.swing.JPanel NavBar;
     private javax.swing.JLabel NavBills;
     private javax.swing.JLabel NavDashboard;
     private javax.swing.JLabel NavSettings;
-    private javax.swing.JLabel User_Name;
-    private javax.swing.JPanel account;
+    private javax.swing.JLabel NumberOfBills;
+    private javax.swing.JLabel NunberOfBills;
+    private javax.swing.JPanel Settings;
+    private javax.swing.JLabel TotalCost;
+    private javax.swing.JLabel TotalCostCard;
+    private javax.swing.JLabel TotalCostOfBills;
+    private javax.swing.JLabel TotalCostOfBillsCard;
+    private javax.swing.JLabel TotalNumberOfBillsCard;
+    private javax.swing.JPanel TrickeyPanel;
+    private javax.swing.JLabel UserName;
     private javax.swing.JLabel background;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JLabel no_tobe_paid;
-    private javax.swing.JLabel no_tobe_paid_bills;
-    private javax.swing.JPanel settings;
-    private javax.swing.JLabel total_coast;
-    private javax.swing.JLabel total_coast_bills;
-    private javax.swing.JLabel total_coast_card;
-    private javax.swing.JLabel total_coast_card_bills;
-    private javax.swing.JLabel total_no_bill_card;
-    private javax.swing.JLabel total_no_bill_card_bills;
+    private javax.swing.JPanel panelBarChart;
+    private javax.swing.JPanel panelBarChart1;
     // End of variables declaration//GEN-END:variables
 }

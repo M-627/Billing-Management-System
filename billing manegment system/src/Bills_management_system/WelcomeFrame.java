@@ -5,6 +5,9 @@
  */
 package Bills_management_system;
 
+import com.formdev.flatlaf.FlatDarkLaf;
+import javax.swing.UIManager;
+
 /**
  *
  * @author mariam
@@ -71,6 +74,18 @@ public class WelcomeFrame extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
+        
+        
+        try{
+                        UIManager.setLookAndFeel(new FlatDarkLaf());
+
+            }
+        catch (Exception ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        
+        
         
         /* Create and display the form */
         WelcomeFrame Page = new WelcomeFrame();
