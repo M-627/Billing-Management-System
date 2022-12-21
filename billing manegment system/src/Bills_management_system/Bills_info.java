@@ -5,6 +5,9 @@
  */
 package Bills_management_system;
 
+import com.formdev.flatlaf.FlatDarkLaf;
+import javax.swing.UIManager;
+
 /**
  *
  * @author ahmed
@@ -27,15 +30,15 @@ public class Bills_info extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Status = new javax.swing.JLabel();
-        Account_name = new javax.swing.JLabel();
-        Acount_id = new javax.swing.JLabel();
+        BillId = new javax.swing.JLabel();
+        UploadedDate = new javax.swing.JLabel();
+        TotalCost = new javax.swing.JLabel();
         Type = new javax.swing.JLabel();
-        Total_coast = new javax.swing.JLabel();
-        Uploaded_date = new javax.swing.JLabel();
-        Bill_id = new javax.swing.JLabel();
-        pay_button = new javax.swing.JLabel();
-        background = new javax.swing.JLabel();
+        AccountId = new javax.swing.JLabel();
+        AccountName = new javax.swing.JLabel();
+        Status = new javax.swing.JLabel();
+        PayButton = new javax.swing.JLabel();
+        Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -45,44 +48,44 @@ public class Bills_info extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Status.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
-        Status.setForeground(new java.awt.Color(0, 138, 188));
-        Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(Status, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 490, 210, 40));
+        BillId.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
+        BillId.setForeground(new java.awt.Color(0, 138, 188));
+        BillId.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(BillId, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 210, 40));
 
-        Account_name.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
-        Account_name.setForeground(new java.awt.Color(0, 138, 188));
-        Account_name.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(Account_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 420, 210, 40));
+        UploadedDate.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
+        UploadedDate.setForeground(new java.awt.Color(0, 138, 188));
+        UploadedDate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(UploadedDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, 210, 40));
 
-        Acount_id.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
-        Acount_id.setForeground(new java.awt.Color(0, 138, 188));
-        Acount_id.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(Acount_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 360, 210, 40));
+        TotalCost.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
+        TotalCost.setForeground(new java.awt.Color(0, 138, 188));
+        TotalCost.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(TotalCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 230, 210, 40));
 
         Type.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
         Type.setForeground(new java.awt.Color(0, 138, 188));
         Type.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getContentPane().add(Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, 210, 40));
 
-        Total_coast.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
-        Total_coast.setForeground(new java.awt.Color(0, 138, 188));
-        Total_coast.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(Total_coast, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 230, 210, 40));
+        AccountId.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
+        AccountId.setForeground(new java.awt.Color(0, 138, 188));
+        AccountId.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(AccountId, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 360, 210, 40));
 
-        Uploaded_date.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
-        Uploaded_date.setForeground(new java.awt.Color(0, 138, 188));
-        Uploaded_date.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(Uploaded_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, 210, 40));
+        AccountName.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
+        AccountName.setForeground(new java.awt.Color(0, 138, 188));
+        AccountName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(AccountName, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 420, 210, 40));
 
-        Bill_id.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
-        Bill_id.setForeground(new java.awt.Color(0, 138, 188));
-        Bill_id.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(Bill_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 210, 40));
-        getContentPane().add(pay_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 550, 110, 50));
+        Status.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
+        Status.setForeground(new java.awt.Color(0, 138, 188));
+        Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(Status, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 490, 210, 40));
+        getContentPane().add(PayButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 550, 110, 50));
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/bill info.png"))); // NOI18N
-        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/bill info.png"))); // NOI18N
+        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -92,29 +95,13 @@ public class Bills_info extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
+        try{
+                        UIManager.setLookAndFeel(new FlatDarkLaf());
+
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Bills_info.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Bills_info.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Bills_info.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Bills_info.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        catch (Exception ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -125,14 +112,14 @@ public class Bills_info extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Account_name;
-    private javax.swing.JLabel Acount_id;
-    private javax.swing.JLabel Bill_id;
+    private javax.swing.JLabel AccountId;
+    private javax.swing.JLabel AccountName;
+    private javax.swing.JLabel Background;
+    private javax.swing.JLabel BillId;
+    private javax.swing.JLabel PayButton;
     private javax.swing.JLabel Status;
-    private javax.swing.JLabel Total_coast;
+    private javax.swing.JLabel TotalCost;
     private javax.swing.JLabel Type;
-    private javax.swing.JLabel Uploaded_date;
-    private javax.swing.JLabel background;
-    private javax.swing.JLabel pay_button;
+    private javax.swing.JLabel UploadedDate;
     // End of variables declaration//GEN-END:variables
 }
