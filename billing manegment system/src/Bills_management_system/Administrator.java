@@ -83,7 +83,7 @@ public class Administrator extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TrickeyPanel.setBackground(new java.awt.Color(0, 176, 239));
-        getContentPane().add(TrickeyPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 920, 1320, 50));
+        getContentPane().add(TrickeyPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 940, 1320, 50));
 
         UserName.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         UserName.setForeground(new java.awt.Color(17, 43, 60));
@@ -165,7 +165,7 @@ public class Administrator extends javax.swing.JFrame {
         Dashboard.add(NunberOfComplaints, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 100, 60));
 
         ComplaintsNumberCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/Number of complaints.png"))); // NOI18N
-        Dashboard.add(ComplaintsNumberCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 490, -1));
+        Dashboard.add(ComplaintsNumberCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 490, -1));
 
         TotalSolvedComplaints.setFont(new java.awt.Font("Dialog", 1, 26)); // NOI18N
         TotalSolvedComplaints.setForeground(new java.awt.Color(51, 255, 51));
@@ -203,7 +203,7 @@ public class Administrator extends javax.swing.JFrame {
         DashboardTable.setSelectionForeground(new java.awt.Color(51, 51, 55));
         jScrollPane1.setViewportView(DashboardTable);
 
-        Dashboard.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 1220, 260));
+        Dashboard.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 1220, 300));
 
         panelBarChart.setBackground(new java.awt.Color(50, 50, 50));
         panelBarChart.setForeground(new java.awt.Color(217, 217, 217));
@@ -212,7 +212,12 @@ public class Administrator extends javax.swing.JFrame {
         Dashboard.add(panelBarChart, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 0, 270, 200));
 
         Archieve.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/Archieve.png"))); // NOI18N
-        Dashboard.add(Archieve, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 610, -1, -1));
+        Archieve.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ArchieveMouseClicked(evt);
+            }
+        });
+        Dashboard.add(Archieve, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 630, -1, -1));
 
         jTabbedPane1.addTab("tab1", Dashboard);
 
@@ -267,7 +272,7 @@ public class Administrator extends javax.swing.JFrame {
         Settings.setPreferredSize(new java.awt.Dimension(1320, 750));
         jTabbedPane1.addTab("tab2", Settings);
 
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, -1));
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, 770));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/Dashboard Admin.png"))); // NOI18N
         background.setMaximumSize(new java.awt.Dimension(1496, 1032));
@@ -352,6 +357,12 @@ public class Administrator extends javax.swing.JFrame {
 
         NavSettings.setText("Settings");
     }//GEN-LAST:event_NavSettingsMouseExited
+
+    private void ArchieveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ArchieveMouseClicked
+
+             ComplaintInfo Frame = new ComplaintInfo();
+             Frame.setVisible(true);
+    }//GEN-LAST:event_ArchieveMouseClicked
 
     /**
      * @param args the command line arguments

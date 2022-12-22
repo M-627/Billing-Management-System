@@ -6,9 +6,9 @@
 package Bills_management_system;
 
 import com.formdev.flatlaf.FlatDarkLaf;
-import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.UIManager;
+import java.awt.BorderLayout;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -20,13 +20,12 @@ import org.jfree.data.general.DefaultPieDataset;
  * @author ahmed
  */
 public class Customer extends javax.swing.JFrame {
-    // Colors  global variables
     
     
     public void showPieChart() {} /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         
-
+    // Colors  global variables
     private int choose = 1;
     Color blue = Color.decode("#008ABC");
     Color gray = Color.decode("#6A6A6A");
