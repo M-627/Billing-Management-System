@@ -42,9 +42,8 @@ public class Bills_info extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMaximumSize(new java.awt.Dimension(681, 711));
-        setMinimumSize(new java.awt.Dimension(681, 711));
-        setPreferredSize(new java.awt.Dimension(681, 711));
+        setMaximumSize(new java.awt.Dimension(681, 681));
+        setMinimumSize(new java.awt.Dimension(681, 681));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

@@ -8,6 +8,12 @@ package Bills_management_system;
 import com.formdev.flatlaf.FlatDarkLaf;
 import java.awt.Color;
 import javax.swing.UIManager;
+import java.awt.BorderLayout;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PiePlot;
+import org.jfree.data.general.DefaultPieDataset;
 
 /**
  *
@@ -21,8 +27,14 @@ public class Administrator extends javax.swing.JFrame {
     public Administrator() {
         initComponents();
     }
+
+    public void showPieChart() {
+    } /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
-    private int choose = 1;
+    
+    
+    // Colors  global variables
+    private int Choose = 1;
     Color blue = Color.decode("#008ABC");
     Color gray = Color.decode("#6A6A6A");
 
@@ -40,16 +52,19 @@ public class Administrator extends javax.swing.JFrame {
         NavBar = new javax.swing.JPanel();
         NavDashboard = new javax.swing.JLabel();
         NavBills = new javax.swing.JLabel();
-        NavAccounts = new javax.swing.JLabel();
         NavSettings = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         Dashboard = new javax.swing.JPanel();
-        NunberOfBills = new javax.swing.JLabel();
-        TotalCost = new javax.swing.JLabel();
-        BillsNumberCard = new javax.swing.JLabel();
-        TotalCostCard = new javax.swing.JLabel();
+        NunberOfComplaints = new javax.swing.JLabel();
+        ComplaintsNumberCard = new javax.swing.JLabel();
+        TotalSolvedComplaints = new javax.swing.JLabel();
+        TotalSolvedComplaintsCard = new javax.swing.JLabel();
+        SearchTextField = new javax.swing.JTextField();
+        Search = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         DashboardTable = new javax.swing.JTable();
+        panelBarChart = new javax.swing.JPanel();
+        Archieve = new javax.swing.JLabel();
         Bills = new javax.swing.JPanel();
         NumberOfBills = new javax.swing.JLabel();
         TotalCostOfBills = new javax.swing.JLabel();
@@ -57,7 +72,6 @@ public class Administrator extends javax.swing.JFrame {
         TotalCostOfBillsCard = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         BillsTable = new javax.swing.JTable();
-        Acounts = new javax.swing.JPanel();
         Settings = new javax.swing.JPanel();
         background = new javax.swing.JLabel();
 
@@ -94,7 +108,7 @@ public class Administrator extends javax.swing.JFrame {
                 NavDashboardMouseExited(evt);
             }
         });
-        NavBar.add(NavDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 170, 40));
+        NavBar.add(NavDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 170, 40));
 
         NavBills.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         NavBills.setForeground(new java.awt.Color(106, 106, 106));
@@ -111,24 +125,7 @@ public class Administrator extends javax.swing.JFrame {
                 NavBillsMouseExited(evt);
             }
         });
-        NavBar.add(NavBills, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 90, 40));
-
-        NavAccounts.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        NavAccounts.setForeground(new java.awt.Color(106, 106, 106));
-        NavAccounts.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        NavAccounts.setText("Accounts");
-        NavAccounts.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                NavAccountsMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                NavAccountsMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                NavAccountsMouseExited(evt);
-            }
-        });
-        NavBar.add(NavAccounts, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 150, 50));
+        NavBar.add(NavBills, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 20, 50, -1));
 
         NavSettings.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         NavSettings.setForeground(new java.awt.Color(106, 106, 106));
@@ -145,7 +142,7 @@ public class Administrator extends javax.swing.JFrame {
                 NavSettingsMouseExited(evt);
             }
         });
-        NavBar.add(NavSettings, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 10, 140, 50));
+        NavBar.add(NavSettings, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 10, 140, 50));
 
         getContentPane().add(NavBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 1300, 70));
 
@@ -162,21 +159,30 @@ public class Administrator extends javax.swing.JFrame {
         Dashboard.setPreferredSize(new java.awt.Dimension(1320, 750));
         Dashboard.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        NunberOfBills.setFont(new java.awt.Font("Dialog", 1, 26)); // NOI18N
-        NunberOfBills.setForeground(new java.awt.Color(51, 255, 51));
-        NunberOfBills.setText("NO.");
-        Dashboard.add(NunberOfBills, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 100, 60));
+        NunberOfComplaints.setFont(new java.awt.Font("Dialog", 1, 26)); // NOI18N
+        NunberOfComplaints.setForeground(new java.awt.Color(51, 255, 51));
+        NunberOfComplaints.setText("NO.");
+        Dashboard.add(NunberOfComplaints, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 100, 60));
 
-        TotalCost.setFont(new java.awt.Font("Dialog", 1, 26)); // NOI18N
-        TotalCost.setForeground(new java.awt.Color(51, 255, 51));
-        TotalCost.setText("NO.");
-        Dashboard.add(TotalCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 80, 90, 60));
+        ComplaintsNumberCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/Number of complaints.png"))); // NOI18N
+        Dashboard.add(ComplaintsNumberCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 490, -1));
 
-        BillsNumberCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Number of bills card.png"))); // NOI18N
-        Dashboard.add(BillsNumberCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 490, -1));
+        TotalSolvedComplaints.setFont(new java.awt.Font("Dialog", 1, 26)); // NOI18N
+        TotalSolvedComplaints.setForeground(new java.awt.Color(51, 255, 51));
+        TotalSolvedComplaints.setText("NO.");
+        Dashboard.add(TotalSolvedComplaints, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 80, 90, 60));
 
-        TotalCostCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Total cost card.png"))); // NOI18N
-        Dashboard.add(TotalCostCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 10, 520, -1));
+        TotalSolvedComplaintsCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/solved complaints.png"))); // NOI18N
+        Dashboard.add(TotalSolvedComplaintsCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 10, 520, -1));
+
+        SearchTextField.setBackground(new java.awt.Color(255, 255, 255));
+        SearchTextField.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        SearchTextField.setForeground(new java.awt.Color(0, 138, 188));
+        SearchTextField.setBorder(null);
+        Dashboard.add(SearchTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 210, 400, 40));
+
+        Search.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/Search.png"))); // NOI18N
+        Dashboard.add(Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, -1, -1));
 
         DashboardTable.setBackground(new java.awt.Color(51, 51, 55));
         DashboardTable.setForeground(new java.awt.Color(255, 255, 255));
@@ -197,7 +203,16 @@ public class Administrator extends javax.swing.JFrame {
         DashboardTable.setSelectionForeground(new java.awt.Color(51, 51, 55));
         jScrollPane1.setViewportView(DashboardTable);
 
-        Dashboard.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 1230, 350));
+        Dashboard.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 1220, 260));
+
+        panelBarChart.setBackground(new java.awt.Color(50, 50, 50));
+        panelBarChart.setForeground(new java.awt.Color(217, 217, 217));
+        panelBarChart.setPreferredSize(new java.awt.Dimension(540, 346));
+        panelBarChart.setLayout(new java.awt.BorderLayout());
+        Dashboard.add(panelBarChart, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 0, 270, 200));
+
+        Archieve.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/Archieve.png"))); // NOI18N
+        Dashboard.add(Archieve, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 610, -1, -1));
 
         jTabbedPane1.addTab("tab1", Dashboard);
 
@@ -246,12 +261,6 @@ public class Administrator extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("tab4", Bills);
 
-        Acounts.setMaximumSize(new java.awt.Dimension(1320, 750));
-        Acounts.setMinimumSize(new java.awt.Dimension(1320, 750));
-        Acounts.setOpaque(false);
-        Acounts.setPreferredSize(new java.awt.Dimension(1320, 750));
-        jTabbedPane1.addTab("tab5", Acounts);
-
         Settings.setMaximumSize(new java.awt.Dimension(1320, 750));
         Settings.setMinimumSize(new java.awt.Dimension(1320, 750));
         Settings.setOpaque(false);
@@ -260,7 +269,7 @@ public class Administrator extends javax.swing.JFrame {
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, -1));
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Dashboard Customer.png"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/Dashboard Admin.png"))); // NOI18N
         background.setMaximumSize(new java.awt.Dimension(1496, 1032));
         background.setMinimumSize(new java.awt.Dimension(1496, 1032));
         background.setPreferredSize(new java.awt.Dimension(1496, 1032));
@@ -272,18 +281,17 @@ public class Administrator extends javax.swing.JFrame {
 
     private void NavDashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NavDashboardMouseClicked
         // TODO add your handling code here:
-        choose = 1;
+        Choose = 1;
         jTabbedPane1.setSelectedIndex(0);
         NavDashboard.setForeground(blue);
         NavBills.setForeground(gray);
-        NavAccounts.setForeground(gray);
         NavSettings.setForeground(gray);
         NavDashboard.setText("Dashboard");
     }//GEN-LAST:event_NavDashboardMouseClicked
 
     private void NavDashboardMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NavDashboardMouseEntered
-        // TODO add your handling code here:
-        if (choose == 1) {
+
+        if (Choose == 1) {
         } else {
             String underline = "<HTML><u>Dashboard</u></HTML>";
             NavDashboard.setText(underline);
@@ -291,24 +299,23 @@ public class Administrator extends javax.swing.JFrame {
     }//GEN-LAST:event_NavDashboardMouseEntered
 
     private void NavDashboardMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NavDashboardMouseExited
-        // TODO add your handling code here:
+
         NavDashboard.setText("Dashboard");
     }//GEN-LAST:event_NavDashboardMouseExited
 
     private void NavBillsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NavBillsMouseClicked
-        // TODO add your handling code here:
-        choose = 2;
+
+        Choose = 2;
         jTabbedPane1.setSelectedIndex(1);
         NavBills.setForeground(blue);
         NavDashboard.setForeground(gray);
-        NavAccounts.setForeground(gray);
         NavSettings.setForeground(gray);
         NavBills.setText("Bills");
     }//GEN-LAST:event_NavBillsMouseClicked
 
     private void NavBillsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NavBillsMouseEntered
-        // TODO add your handling code here:
-        if (choose == 2) {
+
+        if (Choose == 2) {
         } else {
             String underline = "<HTML><u>Bills</u></HTML>";
             NavBills.setText(underline);
@@ -316,51 +323,24 @@ public class Administrator extends javax.swing.JFrame {
     }//GEN-LAST:event_NavBillsMouseEntered
 
     private void NavBillsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NavBillsMouseExited
-        // TODO add your handling code here:
+
         NavBills.setText("Bills");
     }//GEN-LAST:event_NavBillsMouseExited
 
-    private void NavAccountsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NavAccountsMouseClicked
-        // TODO add your handling code here:
-        choose = 3;
+    private void NavSettingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NavSettingsMouseClicked
+
+        Choose = 3;
+
         jTabbedPane1.setSelectedIndex(2);
         NavDashboard.setForeground(gray);
         NavBills.setForeground(gray);
-        NavAccounts.setForeground(blue);
-        NavSettings.setForeground(gray);
-        NavAccounts.setText("Accounts");
-    }//GEN-LAST:event_NavAccountsMouseClicked
-
-    private void NavAccountsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NavAccountsMouseEntered
-        // TODO add your handling code here:
-        if (choose == 3) {
-        } else {
-            String underline = "<HTML><u>Accounts</u></HTML>";
-            NavAccounts.setText(underline);
-
-        }
-    }//GEN-LAST:event_NavAccountsMouseEntered
-
-    private void NavAccountsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NavAccountsMouseExited
-        // TODO add your handling code here:
-        NavAccounts.setText("Accounts");
-    }//GEN-LAST:event_NavAccountsMouseExited
-
-    private void NavSettingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NavSettingsMouseClicked
-        // TODO add your handling code here:
-        choose = 4;
-
-        jTabbedPane1.setSelectedIndex(3);
-        NavDashboard.setForeground(gray);
-        NavBills.setForeground(gray);
-        NavAccounts.setForeground(gray);
         NavSettings.setForeground(blue);
         NavSettings.setText("Settings");
     }//GEN-LAST:event_NavSettingsMouseClicked
 
     private void NavSettingsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NavSettingsMouseEntered
-        // TODO add your handling code here:
-        if (choose == 4) {
+
+        if (Choose == 3) {
         } else {
             String underline = "<HTML><u>Settings</u></HTML>";
             NavSettings.setText(underline);
@@ -369,7 +349,7 @@ public class Administrator extends javax.swing.JFrame {
     }//GEN-LAST:event_NavSettingsMouseEntered
 
     private void NavSettingsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NavSettingsMouseExited
-        // TODO add your handling code here:
+
         NavSettings.setText("Settings");
     }//GEN-LAST:event_NavSettingsMouseExited
 
@@ -377,12 +357,11 @@ public class Administrator extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
-        try{
-                        UIManager.setLookAndFeel(new FlatDarkLaf());
 
-            }
-        catch (Exception ex) {
+        try {
+            UIManager.setLookAndFeel(new FlatDarkLaf());
+
+        } catch (Exception ex) {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 
@@ -395,30 +374,32 @@ public class Administrator extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Acounts;
+    private javax.swing.JLabel Archieve;
     private javax.swing.JPanel Bills;
-    private javax.swing.JLabel BillsNumberCard;
     private javax.swing.JTable BillsTable;
+    private javax.swing.JLabel ComplaintsNumberCard;
     private javax.swing.JPanel Dashboard;
     private javax.swing.JTable DashboardTable;
-    private javax.swing.JLabel NavAccounts;
     private javax.swing.JPanel NavBar;
     private javax.swing.JLabel NavBills;
     private javax.swing.JLabel NavDashboard;
     private javax.swing.JLabel NavSettings;
     private javax.swing.JLabel NumberOfBills;
-    private javax.swing.JLabel NunberOfBills;
+    private javax.swing.JLabel NunberOfComplaints;
+    private javax.swing.JLabel Search;
+    private javax.swing.JTextField SearchTextField;
     private javax.swing.JPanel Settings;
-    private javax.swing.JLabel TotalCost;
-    private javax.swing.JLabel TotalCostCard;
     private javax.swing.JLabel TotalCostOfBills;
     private javax.swing.JLabel TotalCostOfBillsCard;
     private javax.swing.JLabel TotalNumberOfBillsCard;
+    private javax.swing.JLabel TotalSolvedComplaints;
+    private javax.swing.JLabel TotalSolvedComplaintsCard;
     private javax.swing.JPanel TrickeyPanel;
     private javax.swing.JLabel UserName;
     private javax.swing.JLabel background;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JPanel panelBarChart;
     // End of variables declaration//GEN-END:variables
 }
