@@ -65,14 +65,41 @@ public class Administrator extends javax.swing.JFrame {
         DashboardTable = new javax.swing.JTable();
         panelBarChart = new javax.swing.JPanel();
         Archieve = new javax.swing.JLabel();
+        ArchievedComplaints = new javax.swing.JPanel();
+        ArchieveSearchTextField = new javax.swing.JTextField();
+        ArchieveSearch = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        ComplaintsTable = new javax.swing.JTable();
         Bills = new javax.swing.JPanel();
-        NumberOfBills = new javax.swing.JLabel();
-        TotalCostOfBills = new javax.swing.JLabel();
-        TotalNumberOfBillsCard = new javax.swing.JLabel();
-        TotalCostOfBillsCard = new javax.swing.JLabel();
+        CustomerIdTextField = new javax.swing.JTextField();
+        UploadedDate = new com.toedter.calendar.JDateChooser();
+        TotalCostTextField = new javax.swing.JTextField();
+        SearchBillsTextField = new javax.swing.JTextField();
+        CustomerIdLabl = new javax.swing.JLabel();
+        UplodedDateLabel = new javax.swing.JLabel();
+        UnpaidRadioButton = new javax.swing.JRadioButton();
+        TotalCostLabel = new javax.swing.JLabel();
+        SearchLabel = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         BillsTable = new javax.swing.JTable();
         Settings = new javax.swing.JPanel();
+        ProfileInfo = new javax.swing.JLabel();
+        LogOut = new javax.swing.JLabel();
+        Password = new javax.swing.JLabel();
+        NewPasswordTextField = new javax.swing.JTextField();
+        NewPasswordLabel = new javax.swing.JLabel();
+        DoneButton = new javax.swing.JLabel();
+        Profile = new javax.swing.JPanel();
+        FirstName = new javax.swing.JLabel();
+        MiddleName = new javax.swing.JLabel();
+        LastName = new javax.swing.JLabel();
+        Username = new javax.swing.JLabel();
+        InfoPassword = new javax.swing.JLabel();
+        EMail = new javax.swing.JLabel();
+        CompanyId = new javax.swing.JLabel();
+        CompanyType = new javax.swing.JLabel();
+        CompanyName = new javax.swing.JLabel();
+        InformationBackground = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -164,7 +191,7 @@ public class Administrator extends javax.swing.JFrame {
         NunberOfComplaints.setText("NO.");
         Dashboard.add(NunberOfComplaints, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 100, 60));
 
-        ComplaintsNumberCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/Number of complaints.png"))); // NOI18N
+        ComplaintsNumberCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/Dashboard/Number of complaints.png"))); // NOI18N
         Dashboard.add(ComplaintsNumberCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 490, -1));
 
         TotalSolvedComplaints.setFont(new java.awt.Font("Dialog", 1, 26)); // NOI18N
@@ -172,7 +199,7 @@ public class Administrator extends javax.swing.JFrame {
         TotalSolvedComplaints.setText("NO.");
         Dashboard.add(TotalSolvedComplaints, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 80, 90, 60));
 
-        TotalSolvedComplaintsCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/solved complaints.png"))); // NOI18N
+        TotalSolvedComplaintsCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/Dashboard/solved complaints.png"))); // NOI18N
         Dashboard.add(TotalSolvedComplaintsCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 10, 520, -1));
 
         SearchTextField.setBackground(new java.awt.Color(255, 255, 255));
@@ -181,7 +208,7 @@ public class Administrator extends javax.swing.JFrame {
         SearchTextField.setBorder(null);
         Dashboard.add(SearchTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 210, 400, 40));
 
-        Search.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/Search.png"))); // NOI18N
+        Search.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/Dashboard/Search.png"))); // NOI18N
         Dashboard.add(Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, -1, -1));
 
         DashboardTable.setBackground(new java.awt.Color(51, 51, 55));
@@ -211,7 +238,7 @@ public class Administrator extends javax.swing.JFrame {
         panelBarChart.setLayout(new java.awt.BorderLayout());
         Dashboard.add(panelBarChart, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 0, 270, 200));
 
-        Archieve.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/Archieve.png"))); // NOI18N
+        Archieve.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/Dashboard/Archieve.png"))); // NOI18N
         Archieve.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ArchieveMouseClicked(evt);
@@ -221,27 +248,98 @@ public class Administrator extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("tab1", Dashboard);
 
+        ArchievedComplaints.setMaximumSize(new java.awt.Dimension(1320, 750));
+        ArchievedComplaints.setMinimumSize(new java.awt.Dimension(1320, 750));
+        ArchievedComplaints.setOpaque(false);
+        ArchievedComplaints.setPreferredSize(new java.awt.Dimension(1320, 750));
+        ArchievedComplaints.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        ArchieveSearchTextField.setBackground(new java.awt.Color(255, 255, 255));
+        ArchieveSearchTextField.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        ArchieveSearchTextField.setForeground(new java.awt.Color(0, 138, 188));
+        ArchieveSearchTextField.setBorder(null);
+        ArchievedComplaints.add(ArchieveSearchTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 40, 400, 40));
+
+        ArchieveSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/Dashboard/Search.png"))); // NOI18N
+        ArchievedComplaints.add(ArchieveSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, -1, -1));
+
+        ComplaintsTable.setBackground(new java.awt.Color(51, 51, 55));
+        ComplaintsTable.setForeground(new java.awt.Color(255, 255, 255));
+        ComplaintsTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        ComplaintsTable.setPreferredSize(new java.awt.Dimension(535, 1320));
+        ComplaintsTable.setRowHeight(35);
+        ComplaintsTable.setSelectionBackground(new java.awt.Color(228, 238, 242));
+        ComplaintsTable.setSelectionForeground(new java.awt.Color(51, 51, 55));
+        jScrollPane3.setViewportView(ComplaintsTable);
+
+        ArchievedComplaints.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 1220, 300));
+
+        jTabbedPane1.addTab("tab2", ArchievedComplaints);
+
         Bills.setMaximumSize(new java.awt.Dimension(1320, 750));
         Bills.setMinimumSize(new java.awt.Dimension(1320, 750));
         Bills.setOpaque(false);
         Bills.setPreferredSize(new java.awt.Dimension(1320, 750));
         Bills.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        NumberOfBills.setFont(new java.awt.Font("Dialog", 1, 26)); // NOI18N
-        NumberOfBills.setForeground(new java.awt.Color(51, 255, 51));
-        NumberOfBills.setText("NO.");
-        Bills.add(NumberOfBills, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 100, 60));
+        CustomerIdTextField.setBackground(new java.awt.Color(255, 255, 255));
+        CustomerIdTextField.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        CustomerIdTextField.setForeground(new java.awt.Color(0, 138, 188));
+        CustomerIdTextField.setBorder(null);
+        Bills.add(CustomerIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, 750, 40));
 
-        TotalCostOfBills.setFont(new java.awt.Font("Dialog", 1, 26)); // NOI18N
-        TotalCostOfBills.setForeground(new java.awt.Color(51, 255, 51));
-        TotalCostOfBills.setText("NO.");
-        Bills.add(TotalCostOfBills, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 80, 90, 60));
+        UploadedDate.setBackground(new java.awt.Color(255, 255, 255));
+        UploadedDate.setForeground(new java.awt.Color(0, 138, 188));
+        Bills.add(UploadedDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 290, 50));
 
-        TotalNumberOfBillsCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Number of bills card.png"))); // NOI18N
-        Bills.add(TotalNumberOfBillsCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 490, -1));
+        TotalCostTextField.setBackground(new java.awt.Color(255, 255, 255));
+        TotalCostTextField.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        TotalCostTextField.setForeground(new java.awt.Color(0, 138, 188));
+        TotalCostTextField.setBorder(null);
+        Bills.add(TotalCostTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 120, 210, 40));
 
-        TotalCostOfBillsCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Total cost card.png"))); // NOI18N
-        Bills.add(TotalCostOfBillsCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 10, 520, -1));
+        SearchBillsTextField.setBackground(new java.awt.Color(255, 255, 255));
+        SearchBillsTextField.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        SearchBillsTextField.setForeground(new java.awt.Color(0, 138, 188));
+        SearchBillsTextField.setBorder(null);
+        SearchBillsTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchBillsTextFieldActionPerformed(evt);
+            }
+        });
+        Bills.add(SearchBillsTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, 790, 40));
+
+        CustomerIdLabl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/Bills/Id.png"))); // NOI18N
+        Bills.add(CustomerIdLabl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+
+        UplodedDateLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/Bills/Date.png"))); // NOI18N
+        Bills.add(UplodedDateLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+
+        UnpaidRadioButton.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        UnpaidRadioButton.setForeground(new java.awt.Color(106, 106, 106));
+        UnpaidRadioButton.setText("Unpaid");
+        UnpaidRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UnpaidRadioButtonActionPerformed(evt);
+            }
+        });
+        Bills.add(UnpaidRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 120, 120, 40));
+
+        TotalCostLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/Bills/Cost.png"))); // NOI18N
+        Bills.add(TotalCostLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 120, -1, -1));
+
+        SearchLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/Bills/search.png"))); // NOI18N
+        Bills.add(SearchLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, -1, -1));
 
         BillsTable.setBackground(new java.awt.Color(51, 51, 55));
         BillsTable.setForeground(new java.awt.Color(255, 255, 255));
@@ -270,11 +368,101 @@ public class Administrator extends javax.swing.JFrame {
         Settings.setMinimumSize(new java.awt.Dimension(1320, 750));
         Settings.setOpaque(false);
         Settings.setPreferredSize(new java.awt.Dimension(1320, 750));
+        Settings.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        ProfileInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/Settings/Profile info.png"))); // NOI18N
+        ProfileInfo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ProfileInfoMouseClicked(evt);
+            }
+        });
+        Settings.add(ProfileInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, -1, -1));
+
+        LogOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/Settings/Logout.png"))); // NOI18N
+        LogOut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LogOutMouseClicked(evt);
+            }
+        });
+        Settings.add(LogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 90, -1, -1));
+
+        Password.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/Settings/Password.png"))); // NOI18N
+        Password.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PasswordMouseClicked(evt);
+            }
+        });
+        Settings.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, -1, -1));
+
+        NewPasswordTextField.setBackground(new java.awt.Color(255, 255, 255));
+        NewPasswordTextField.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        NewPasswordTextField.setForeground(new java.awt.Color(0, 138, 188));
+        NewPasswordTextField.setBorder(null);
+        Settings.add(NewPasswordTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 560, 620, 40));
+
+        NewPasswordLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/Settings/NewPassword.png"))); // NOI18N
+        Settings.add(NewPasswordLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 560, -1, -1));
+
+        DoneButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/Settings/Done.png"))); // NOI18N
+        DoneButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DoneButtonMouseClicked(evt);
+            }
+        });
+        Settings.add(DoneButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 560, -1, -1));
+
         jTabbedPane1.addTab("tab2", Settings);
+
+        Profile.setMaximumSize(new java.awt.Dimension(1320, 750));
+        Profile.setMinimumSize(new java.awt.Dimension(1320, 750));
+        Profile.setOpaque(false);
+        Profile.setPreferredSize(new java.awt.Dimension(1320, 750));
+        Profile.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        FirstName.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        FirstName.setForeground(new java.awt.Color(0, 138, 188));
+        Profile.add(FirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 280, 40));
+
+        MiddleName.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        MiddleName.setForeground(new java.awt.Color(0, 138, 188));
+        Profile.add(MiddleName, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 270, 50));
+
+        LastName.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        LastName.setForeground(new java.awt.Color(0, 138, 188));
+        Profile.add(LastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 280, 40));
+
+        Username.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        Username.setForeground(new java.awt.Color(0, 138, 188));
+        Profile.add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, 280, 40));
+
+        InfoPassword.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        InfoPassword.setForeground(new java.awt.Color(0, 138, 188));
+        Profile.add(InfoPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, 280, 50));
+
+        EMail.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        EMail.setForeground(new java.awt.Color(0, 138, 188));
+        Profile.add(EMail, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 490, 620, 40));
+
+        CompanyId.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        CompanyId.setForeground(new java.awt.Color(0, 138, 188));
+        Profile.add(CompanyId, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 160, 280, 50));
+
+        CompanyType.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        CompanyType.setForeground(new java.awt.Color(0, 138, 188));
+        Profile.add(CompanyType, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 230, 280, 50));
+
+        CompanyName.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        CompanyName.setForeground(new java.awt.Color(0, 138, 188));
+        Profile.add(CompanyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 300, 280, 50));
+
+        InformationBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/Settings/Information.png"))); // NOI18N
+        Profile.add(InformationBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+
+        jTabbedPane1.addTab("tab2", Profile);
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, 770));
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/Dashboard Admin.png"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/Dashboard/Dashboard Admin.png"))); // NOI18N
         background.setMaximumSize(new java.awt.Dimension(1496, 1032));
         background.setMinimumSize(new java.awt.Dimension(1496, 1032));
         background.setPreferredSize(new java.awt.Dimension(1496, 1032));
@@ -311,7 +499,7 @@ public class Administrator extends javax.swing.JFrame {
     private void NavBillsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NavBillsMouseClicked
 
         Choose = 2;
-        jTabbedPane1.setSelectedIndex(1);
+        jTabbedPane1.setSelectedIndex(2);
         NavBills.setForeground(blue);
         NavDashboard.setForeground(gray);
         NavSettings.setForeground(gray);
@@ -336,11 +524,14 @@ public class Administrator extends javax.swing.JFrame {
 
         Choose = 3;
 
-        jTabbedPane1.setSelectedIndex(2);
+        jTabbedPane1.setSelectedIndex(3);
         NavDashboard.setForeground(gray);
         NavBills.setForeground(gray);
         NavSettings.setForeground(blue);
         NavSettings.setText("Settings");
+        NewPasswordLabel.setVisible(false);
+        NewPasswordTextField.setVisible(false);
+        DoneButton.setVisible(false);
     }//GEN-LAST:event_NavSettingsMouseClicked
 
     private void NavSettingsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NavSettingsMouseEntered
@@ -360,9 +551,41 @@ public class Administrator extends javax.swing.JFrame {
 
     private void ArchieveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ArchieveMouseClicked
 
-             ComplaintInfo Frame = new ComplaintInfo();
-             Frame.setVisible(true);
+             jTabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_ArchieveMouseClicked
+
+    private void SearchBillsTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchBillsTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SearchBillsTextFieldActionPerformed
+
+    private void UnpaidRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UnpaidRadioButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UnpaidRadioButtonActionPerformed
+
+    private void LogOutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutMouseClicked
+        
+        this.dispose();
+        Login Frame = new Login();
+        Frame.setVisible(true);
+    }//GEN-LAST:event_LogOutMouseClicked
+
+    private void PasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PasswordMouseClicked
+        
+        NewPasswordLabel.setVisible(true);
+        NewPasswordTextField.setVisible(true);
+        DoneButton.setVisible(true);
+    }//GEN-LAST:event_PasswordMouseClicked
+
+    private void DoneButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DoneButtonMouseClicked
+        
+        NewPasswordLabel.setVisible(false);
+        NewPasswordTextField.setVisible(false);
+        DoneButton.setVisible(false);
+    }//GEN-LAST:event_DoneButtonMouseClicked
+
+    private void ProfileInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProfileInfoMouseClicked
+        jTabbedPane1.setSelectedIndex(4);
+    }//GEN-LAST:event_ProfileInfoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -386,30 +609,57 @@ public class Administrator extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Archieve;
+    private javax.swing.JLabel ArchieveSearch;
+    private javax.swing.JTextField ArchieveSearchTextField;
+    private javax.swing.JPanel ArchievedComplaints;
     private javax.swing.JPanel Bills;
     private javax.swing.JTable BillsTable;
+    private javax.swing.JLabel CompanyId;
+    private javax.swing.JLabel CompanyName;
+    private javax.swing.JLabel CompanyType;
     private javax.swing.JLabel ComplaintsNumberCard;
+    private javax.swing.JTable ComplaintsTable;
+    private javax.swing.JLabel CustomerIdLabl;
+    private javax.swing.JTextField CustomerIdTextField;
     private javax.swing.JPanel Dashboard;
     private javax.swing.JTable DashboardTable;
+    private javax.swing.JLabel DoneButton;
+    private javax.swing.JLabel EMail;
+    private javax.swing.JLabel FirstName;
+    private javax.swing.JLabel InfoPassword;
+    private javax.swing.JLabel InformationBackground;
+    private javax.swing.JLabel LastName;
+    private javax.swing.JLabel LogOut;
+    private javax.swing.JLabel MiddleName;
     private javax.swing.JPanel NavBar;
     private javax.swing.JLabel NavBills;
     private javax.swing.JLabel NavDashboard;
     private javax.swing.JLabel NavSettings;
-    private javax.swing.JLabel NumberOfBills;
+    private javax.swing.JLabel NewPasswordLabel;
+    private javax.swing.JTextField NewPasswordTextField;
     private javax.swing.JLabel NunberOfComplaints;
+    private javax.swing.JLabel Password;
+    private javax.swing.JPanel Profile;
+    private javax.swing.JLabel ProfileInfo;
     private javax.swing.JLabel Search;
+    private javax.swing.JTextField SearchBillsTextField;
+    private javax.swing.JLabel SearchLabel;
     private javax.swing.JTextField SearchTextField;
     private javax.swing.JPanel Settings;
-    private javax.swing.JLabel TotalCostOfBills;
-    private javax.swing.JLabel TotalCostOfBillsCard;
-    private javax.swing.JLabel TotalNumberOfBillsCard;
+    private javax.swing.JLabel TotalCostLabel;
+    private javax.swing.JTextField TotalCostTextField;
     private javax.swing.JLabel TotalSolvedComplaints;
     private javax.swing.JLabel TotalSolvedComplaintsCard;
     private javax.swing.JPanel TrickeyPanel;
+    private javax.swing.JRadioButton UnpaidRadioButton;
+    private com.toedter.calendar.JDateChooser UploadedDate;
+    private javax.swing.JLabel UplodedDateLabel;
     private javax.swing.JLabel UserName;
+    private javax.swing.JLabel Username;
     private javax.swing.JLabel background;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JPanel panelBarChart;
     // End of variables declaration//GEN-END:variables
