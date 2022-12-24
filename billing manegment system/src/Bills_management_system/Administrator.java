@@ -485,7 +485,7 @@ public class Administrator extends javax.swing.JFrame {
                 SaveButtonMouseClicked(evt);
             }
         });
-        Profile.add(SaveButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 570, -1, -1));
+        Profile.add(SaveButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 580, -1, -1));
 
         InformationBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/Settings/Information.png"))); // NOI18N
         Profile.add(InformationBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
@@ -624,8 +624,8 @@ public class Administrator extends javax.swing.JFrame {
     }//GEN-LAST:event_MiddleNameActionPerformed
 
     private void SaveButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveButtonMouseClicked
-       
-        jTabbedPane1.setSelectedIndex(3);
+        
+         jTabbedPane1.setSelectedIndex(3);
     }//GEN-LAST:event_SaveButtonMouseClicked
 
     /**
