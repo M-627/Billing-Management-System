@@ -9,7 +9,7 @@ package Bills_management_system;
  *
  * @author Madan
  */
-public class CurrentUser 
+public class CurrentUser extends dataConnection
 {
     public static int usrid;
 }

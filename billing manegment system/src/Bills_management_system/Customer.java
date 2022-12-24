@@ -5,7 +5,7 @@
  */
 package Bills_management_system;
 
-import com.formdev.flatlaf.FlatDarkLaf;
+import com.formdev.flatlaf.*;
 import java.awt.Color;
 import javax.swing.UIManager;
 import java.awt.BorderLayout;
@@ -23,7 +23,8 @@ public class Customer extends javax.swing.JFrame {
     
     
     public void showPieChart() {} /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    
+    CustomerController ctlr = new CustomerController();
         
     // Colors  global variables
     private int choose = 1;
@@ -35,6 +36,7 @@ public class Customer extends javax.swing.JFrame {
      */
     public Customer() {
         initComponents();
+        UserName.setText(ctlr.setCustomer());
     }
 
     /*
@@ -411,10 +413,11 @@ public class Customer extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        try{
-                        UIManager.setLookAndFeel(new FlatDarkLaf());
+        try
+        {
+            UIManager.setLookAndFeel(new FlatLightLaf());
 
-            }
+        }
         catch (Exception ex) {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }

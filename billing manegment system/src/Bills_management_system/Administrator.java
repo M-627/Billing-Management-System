@@ -5,7 +5,7 @@
  */
 package Bills_management_system;
 
-import com.formdev.flatlaf.FlatDarkLaf;
+import com.formdev.flatlaf.*;
 import java.awt.Color;
 import javax.swing.UIManager;
 import java.awt.BorderLayout;
@@ -636,7 +636,7 @@ public class Administrator extends javax.swing.JFrame {
     public static void main(String args[]) {
 
         try {
-            UIManager.setLookAndFeel(new FlatDarkLaf());
+            UIManager.setLookAndFeel(new FlatLightLaf());
 
         } catch (Exception ex) {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);

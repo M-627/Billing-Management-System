@@ -4,10 +4,33 @@
  */
 package Bills_management_system;
 
+import java.sql.*;
+
 /**
  *
  * @author m639a
  */
-public class CustomerController {
-    
+public class CustomerController extends dataConnection
+{
+    public String setCustomer()
+    {
+        String userName = "USER";
+        try
+        {
+            getConnected("Select * from dbo.Users");
+            command = con.prepareStatement("Select dbo.Users.Username As name from dbo.Users Where (UserID = ?)");
+            command.setInt(1, CurrentUser.usrid);
+            res = command.executeQuery();
+            while(res.next())
+            {
+                userName = res.getString("name");
+            }
+        }
+        catch(SQLException e)
+        {
+            e.printStackTrace();
+        }
+        
+        return userName;
+    }
 }
