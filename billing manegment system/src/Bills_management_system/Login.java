@@ -5,7 +5,8 @@
  */
 package Bills_management_system;
 
-import com.formdev.flatlaf.FlatDarkLaf;
+import com.formdev.flatlaf.FlatLightLaf;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 /**
@@ -35,7 +36,7 @@ public class Login extends javax.swing.JFrame {
         LoginButton = new javax.swing.JLabel();
         RegisterNowLabel = new javax.swing.JLabel();
         ForgotPassword = new javax.swing.JLabel();
-        LginUsername = new javax.swing.JTextField();
+        LoginUsername = new javax.swing.JTextField();
         LoginPassword = new javax.swing.JPasswordField();
         LoginBackground = new javax.swing.JLabel();
         Register = new javax.swing.JPanel();
@@ -43,8 +44,8 @@ public class Login extends javax.swing.JFrame {
         RegisterUsername = new javax.swing.JTextField();
         RegisterPassword = new javax.swing.JPasswordField();
         RegisterConfirmPassword = new javax.swing.JPasswordField();
-        RegisterButtom = new javax.swing.JLabel();
-        RefisterBackground = new javax.swing.JLabel();
+        RegisterButton = new javax.swing.JLabel();
+        RegisterBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -68,6 +69,11 @@ public class Login extends javax.swing.JFrame {
         LoginButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LoginButton.setText("Login");
         LoginButton.setOpaque(true);
+        LoginButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LoginButtonMouseClicked(evt);
+            }
+        });
         login.add(LoginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, 170, 30));
 
         RegisterNowLabel.setFont(new java.awt.Font("Segoe UI Semilight", 0, 20)); // NOI18N
@@ -90,6 +96,9 @@ public class Login extends javax.swing.JFrame {
         ForgotPassword.setForeground(new java.awt.Color(106, 106, 106));
         ForgotPassword.setText("Forgot pasword?");
         ForgotPassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ForgotPasswordMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 ForgotPasswordMouseEntered(evt);
             }
@@ -99,13 +108,13 @@ public class Login extends javax.swing.JFrame {
         });
         login.add(ForgotPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 340, 120, 30));
 
-        LginUsername.setBackground(new java.awt.Color(217, 217, 217));
-        LginUsername.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
-        LginUsername.setForeground(new java.awt.Color(0, 138, 188));
-        LginUsername.setToolTipText("Enter your name");
-        LginUsername.setBorder(null);
-        LginUsername.setDisabledTextColor(new java.awt.Color(217, 217, 217));
-        login.add(LginUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 219, 180, 40));
+        LoginUsername.setBackground(new java.awt.Color(217, 217, 217));
+        LoginUsername.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        LoginUsername.setForeground(new java.awt.Color(0, 138, 188));
+        LoginUsername.setToolTipText("Enter your name");
+        LoginUsername.setBorder(null);
+        LoginUsername.setDisabledTextColor(new java.awt.Color(217, 217, 217));
+        login.add(LoginUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 219, 180, 40));
 
         LoginPassword.setBackground(new java.awt.Color(217, 217, 217));
         LoginPassword.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
@@ -159,17 +168,22 @@ public class Login extends javax.swing.JFrame {
         RegisterConfirmPassword.setBorder(null);
         Register.add(RegisterConfirmPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 400, 180, 40));
 
-        RegisterButtom.setBackground(new java.awt.Color(0, 138, 188));
-        RegisterButtom.setFont(new java.awt.Font("Serif", 1, 22)); // NOI18N
-        RegisterButtom.setForeground(new java.awt.Color(237, 231, 227));
-        RegisterButtom.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        RegisterButtom.setText("Register");
-        RegisterButtom.setOpaque(true);
-        Register.add(RegisterButtom, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 510, 160, 30));
+        RegisterButton.setBackground(new java.awt.Color(0, 138, 188));
+        RegisterButton.setFont(new java.awt.Font("Serif", 1, 22)); // NOI18N
+        RegisterButton.setForeground(new java.awt.Color(237, 231, 227));
+        RegisterButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        RegisterButton.setText("Register");
+        RegisterButton.setOpaque(true);
+        RegisterButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RegisterButtonMouseClicked(evt);
+            }
+        });
+        Register.add(RegisterButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 510, 160, 30));
 
-        RefisterBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Register (3).png"))); // NOI18N
-        RefisterBackground.setText("jLabel1");
-        Register.add(RefisterBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, -1));
+        RegisterBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Register (3).png"))); // NOI18N
+        RegisterBackground.setText("jLabel1");
+        Register.add(RegisterBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, -1));
 
         jTabbedPane1.addTab("tab2", Register);
 
@@ -179,6 +193,8 @@ public class Login extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    LoginController ctlr = new LoginController();
+    
     private void RegisterNowLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterNowLabelMouseClicked
         // TODO add your handling code here:
         jTabbedPane1.setSelectedIndex(1);
@@ -212,17 +228,67 @@ public class Login extends javax.swing.JFrame {
         RegisterNowLabel.setText("Register now");
     }//GEN-LAST:event_RegisterNowLabelMouseExited
 
+    private void LoginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginButtonMouseClicked
+        
+        String type = ctlr.login(LoginUsername.getText(), LoginPassword.getText());
+        
+        switch (type)
+        {
+            case ("A"):
+                new Administrator().setVisible(true);
+                this.dispose();
+                break;
+            case ("C"):
+                new Customer().setVisible(true);
+                this.dispose();
+                break;
+            default:
+                JOptionPane.showMessageDialog(rootPane, "Incorrect Credentials!");
+                break;
+        }
+        
+    }//GEN-LAST:event_LoginButtonMouseClicked
+
+    private void ForgotPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ForgotPasswordMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ForgotPasswordMouseClicked
+
+    private void RegisterButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterButtonMouseClicked
+        
+        String pwd = RegisterPassword.getText();
+        
+        if (pwd.equals(RegisterConfirmPassword.getText()))
+        {
+            int result = ctlr.register(RegisterUsername.getText(), pwd);
+            if (result == 1)
+            {
+                JOptionPane.showMessageDialog(rootPane, "Registration successful!");
+                BackToLoginButtonMouseClicked(evt);
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(rootPane, "An error occurred. Please try again later!");
+            }
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(rootPane, "Passwords do not match!");
+        }
+        
+    }//GEN-LAST:event_RegisterButtonMouseClicked
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         
         
-        try{
-                        UIManager.setLookAndFeel(new FlatDarkLaf());
-
-            }
-        catch (Exception ex) {
+        try
+        {
+            UIManager.setLookAndFeel(new FlatLightLaf());
+        }
+        catch (Exception ex)
+        {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         
@@ -237,13 +303,13 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BackToLoginButton;
     private javax.swing.JLabel ForgotPassword;
-    private javax.swing.JTextField LginUsername;
     private javax.swing.JLabel LoginBackground;
     private javax.swing.JLabel LoginButton;
     private javax.swing.JPasswordField LoginPassword;
-    private javax.swing.JLabel RefisterBackground;
+    private javax.swing.JTextField LoginUsername;
     private javax.swing.JPanel Register;
-    private javax.swing.JLabel RegisterButtom;
+    private javax.swing.JLabel RegisterBackground;
+    private javax.swing.JLabel RegisterButton;
     private javax.swing.JPasswordField RegisterConfirmPassword;
     private javax.swing.JLabel RegisterNowLabel;
     private javax.swing.JPasswordField RegisterPassword;

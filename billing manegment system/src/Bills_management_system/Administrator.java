@@ -27,10 +27,12 @@ public class Administrator extends javax.swing.JFrame {
     public Administrator() {
         initComponents();
     }
-
-    public void showPieChart() {
-    } /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
+    //Current user - Prepare in controller
+    private int usrid = CurrentUser.usrid;
+    
+    public void showPieChart() {
+    }    
     
     
     // Colors  global variables
