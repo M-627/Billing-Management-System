@@ -90,15 +90,16 @@ public class Administrator extends javax.swing.JFrame {
         NewPasswordLabel = new javax.swing.JLabel();
         DoneButton = new javax.swing.JLabel();
         Profile = new javax.swing.JPanel();
-        FirstName = new javax.swing.JLabel();
-        MiddleName = new javax.swing.JLabel();
-        LastName = new javax.swing.JLabel();
-        Username = new javax.swing.JLabel();
-        InfoPassword = new javax.swing.JLabel();
-        EMail = new javax.swing.JLabel();
-        CompanyId = new javax.swing.JLabel();
-        CompanyType = new javax.swing.JLabel();
-        CompanyName = new javax.swing.JLabel();
+        FirstName = new javax.swing.JTextField();
+        MiddleName = new javax.swing.JTextField();
+        LastName = new javax.swing.JTextField();
+        UserNameAdmin = new javax.swing.JTextField();
+        PasswordAdmin = new javax.swing.JTextField();
+        EMail = new javax.swing.JTextField();
+        CompanyID = new javax.swing.JTextField();
+        CompanyName = new javax.swing.JTextField();
+        CompantType = new javax.swing.JTextField();
+        SaveButton = new javax.swing.JLabel();
         InformationBackground = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
@@ -419,41 +420,72 @@ public class Administrator extends javax.swing.JFrame {
         Profile.setPreferredSize(new java.awt.Dimension(1320, 750));
         Profile.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        FirstName.setBackground(new java.awt.Color(255, 255, 255));
         FirstName.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         FirstName.setForeground(new java.awt.Color(0, 138, 188));
-        Profile.add(FirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 280, 40));
+        FirstName.setBorder(null);
+        Profile.add(FirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 260, 40));
 
+        MiddleName.setBackground(new java.awt.Color(255, 255, 255));
         MiddleName.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         MiddleName.setForeground(new java.awt.Color(0, 138, 188));
-        Profile.add(MiddleName, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 270, 50));
+        MiddleName.setBorder(null);
+        MiddleName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MiddleNameActionPerformed(evt);
+            }
+        });
+        Profile.add(MiddleName, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, 260, 30));
 
+        LastName.setBackground(new java.awt.Color(255, 255, 255));
         LastName.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         LastName.setForeground(new java.awt.Color(0, 138, 188));
-        Profile.add(LastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 280, 40));
+        LastName.setBorder(null);
+        Profile.add(LastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 260, 40));
 
-        Username.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        Username.setForeground(new java.awt.Color(0, 138, 188));
-        Profile.add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, 280, 40));
+        UserNameAdmin.setBackground(new java.awt.Color(255, 255, 255));
+        UserNameAdmin.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        UserNameAdmin.setForeground(new java.awt.Color(0, 138, 188));
+        UserNameAdmin.setBorder(null);
+        Profile.add(UserNameAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, 260, 40));
 
-        InfoPassword.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        InfoPassword.setForeground(new java.awt.Color(0, 138, 188));
-        Profile.add(InfoPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, 280, 50));
+        PasswordAdmin.setBackground(new java.awt.Color(255, 255, 255));
+        PasswordAdmin.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        PasswordAdmin.setForeground(new java.awt.Color(0, 138, 188));
+        PasswordAdmin.setBorder(null);
+        Profile.add(PasswordAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 430, 260, 30));
 
+        EMail.setBackground(new java.awt.Color(255, 255, 255));
         EMail.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         EMail.setForeground(new java.awt.Color(0, 138, 188));
-        Profile.add(EMail, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 490, 620, 40));
+        EMail.setBorder(null);
+        Profile.add(EMail, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 490, 600, 40));
 
-        CompanyId.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        CompanyId.setForeground(new java.awt.Color(0, 138, 188));
-        Profile.add(CompanyId, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 160, 280, 50));
+        CompanyID.setBackground(new java.awt.Color(255, 255, 255));
+        CompanyID.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        CompanyID.setForeground(new java.awt.Color(0, 138, 188));
+        CompanyID.setBorder(null);
+        Profile.add(CompanyID, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 170, 260, 30));
 
-        CompanyType.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        CompanyType.setForeground(new java.awt.Color(0, 138, 188));
-        Profile.add(CompanyType, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 230, 280, 50));
-
+        CompanyName.setBackground(new java.awt.Color(255, 255, 255));
         CompanyName.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         CompanyName.setForeground(new java.awt.Color(0, 138, 188));
-        Profile.add(CompanyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 300, 280, 50));
+        CompanyName.setBorder(null);
+        Profile.add(CompanyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 310, 260, 30));
+
+        CompantType.setBackground(new java.awt.Color(255, 255, 255));
+        CompantType.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        CompantType.setForeground(new java.awt.Color(0, 138, 188));
+        CompantType.setBorder(null);
+        Profile.add(CompantType, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 240, 260, 30));
+
+        SaveButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/Settings/Save.png"))); // NOI18N
+        SaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SaveButtonMouseClicked(evt);
+            }
+        });
+        Profile.add(SaveButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 570, -1, -1));
 
         InformationBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Admin/Settings/Information.png"))); // NOI18N
         Profile.add(InformationBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
@@ -587,6 +619,15 @@ public class Administrator extends javax.swing.JFrame {
         jTabbedPane1.setSelectedIndex(4);
     }//GEN-LAST:event_ProfileInfoMouseClicked
 
+    private void MiddleNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MiddleNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MiddleNameActionPerformed
+
+    private void SaveButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveButtonMouseClicked
+       
+        jTabbedPane1.setSelectedIndex(3);
+    }//GEN-LAST:event_SaveButtonMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -614,9 +655,9 @@ public class Administrator extends javax.swing.JFrame {
     private javax.swing.JPanel ArchievedComplaints;
     private javax.swing.JPanel Bills;
     private javax.swing.JTable BillsTable;
-    private javax.swing.JLabel CompanyId;
-    private javax.swing.JLabel CompanyName;
-    private javax.swing.JLabel CompanyType;
+    private javax.swing.JTextField CompantType;
+    private javax.swing.JTextField CompanyID;
+    private javax.swing.JTextField CompanyName;
     private javax.swing.JLabel ComplaintsNumberCard;
     private javax.swing.JTable ComplaintsTable;
     private javax.swing.JLabel CustomerIdLabl;
@@ -624,13 +665,12 @@ public class Administrator extends javax.swing.JFrame {
     private javax.swing.JPanel Dashboard;
     private javax.swing.JTable DashboardTable;
     private javax.swing.JLabel DoneButton;
-    private javax.swing.JLabel EMail;
-    private javax.swing.JLabel FirstName;
-    private javax.swing.JLabel InfoPassword;
+    private javax.swing.JTextField EMail;
+    private javax.swing.JTextField FirstName;
     private javax.swing.JLabel InformationBackground;
-    private javax.swing.JLabel LastName;
+    private javax.swing.JTextField LastName;
     private javax.swing.JLabel LogOut;
-    private javax.swing.JLabel MiddleName;
+    private javax.swing.JTextField MiddleName;
     private javax.swing.JPanel NavBar;
     private javax.swing.JLabel NavBills;
     private javax.swing.JLabel NavDashboard;
@@ -639,8 +679,10 @@ public class Administrator extends javax.swing.JFrame {
     private javax.swing.JTextField NewPasswordTextField;
     private javax.swing.JLabel NunberOfComplaints;
     private javax.swing.JLabel Password;
+    private javax.swing.JTextField PasswordAdmin;
     private javax.swing.JPanel Profile;
     private javax.swing.JLabel ProfileInfo;
+    private javax.swing.JLabel SaveButton;
     private javax.swing.JLabel Search;
     private javax.swing.JTextField SearchBillsTextField;
     private javax.swing.JLabel SearchLabel;
@@ -655,7 +697,7 @@ public class Administrator extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser UploadedDate;
     private javax.swing.JLabel UplodedDateLabel;
     private javax.swing.JLabel UserName;
-    private javax.swing.JLabel Username;
+    private javax.swing.JTextField UserNameAdmin;
     private javax.swing.JLabel background;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
