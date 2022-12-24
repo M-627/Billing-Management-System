@@ -26,7 +26,7 @@ public class LoginController extends dataConnection
         }
     }
     
-    public String login(String usr, String pwd) throws ClassNotFoundException
+    public String login(String usr, String pwd)
     {
         String acc = "e";
         int id;

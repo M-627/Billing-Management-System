@@ -231,7 +231,6 @@ public class Login extends javax.swing.JFrame {
     private void LoginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginButtonMouseClicked
         
         String type = ctlr.login(LoginUsername.getText(), LoginPassword.getText());
-        
         switch (type)
         {
             case ("A"):

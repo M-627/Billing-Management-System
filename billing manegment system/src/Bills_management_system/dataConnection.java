@@ -42,7 +42,7 @@ public abstract class dataConnection {
     
     
     
-    public void getConnected(String query) throws ClassNotFoundException, SQLException
+    public void getConnected(String query) throws SQLException
     {
         try
         {
