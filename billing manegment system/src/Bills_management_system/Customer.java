@@ -8,6 +8,7 @@ package Bills_management_system;
 import com.formdev.flatlaf.*;
 import java.awt.Color;
 import javax.swing.UIManager;
+import net.proteanit.sql.DbUtils;
 import java.awt.BorderLayout;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -493,6 +494,10 @@ public class Customer extends javax.swing.JFrame {
         NavAccounts.setForeground(gray);
         NavSettings.setForeground(gray);
         NavBills.setText("Bills");
+        
+        NumberOfBills.setText(ctlr.getBillsCount());
+        TotalCostOfBills.setText(ctlr.getBillsCost());
+        BillsTable.setModel(DbUtils.resultSetToTableModel(ctlr.getBills()));
 
     }//GEN-LAST:event_NavBillsMouseClicked
 

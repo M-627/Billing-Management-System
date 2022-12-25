@@ -4,10 +4,33 @@
  */
 package Bills_management_system;
 
+import java.sql.SQLException;
+
 /**
  *
  * @author m639a
  */
-public class AdministratorController {
-    
+public class AdministratorController extends dataConnection
+{
+    public String setAdministrator()
+    {
+        String userName = "USER";
+        try
+        {
+            getConnected("Select * from dbo.Users");
+            command = con.prepareStatement("Select dbo.Users.Username As name from dbo.Users Where (UserID = ?)");
+            command.setInt(1, CurrentUser.usrid);
+            res = command.executeQuery();
+            while(res.next())
+            {
+                userName = res.getString("name");
+            }
+        }
+        catch(SQLException e)
+        {
+            e.printStackTrace();
+        }
+        
+        return userName;
+    }
 }
