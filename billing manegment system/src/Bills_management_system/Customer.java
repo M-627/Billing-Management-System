@@ -74,6 +74,31 @@ public class Customer extends javax.swing.JFrame {
         panelBarChart1 = new javax.swing.JPanel();
         Acounts = new javax.swing.JPanel();
         Settings = new javax.swing.JPanel();
+        Icon = new javax.swing.JLabel();
+        ChangeProfileInfo = new javax.swing.JLabel();
+        ChangePassword = new javax.swing.JLabel();
+        AddComplaint = new javax.swing.JLabel();
+        Feedback = new javax.swing.JLabel();
+        LogOut = new javax.swing.JLabel();
+        SettingsBackground = new javax.swing.JLabel();
+        Profile = new javax.swing.JPanel();
+        FirstName = new javax.swing.JTextField();
+        MiddleName = new javax.swing.JTextField();
+        LastName = new javax.swing.JTextField();
+        UserNameCustomer = new javax.swing.JTextField();
+        PasswordCustomer = new javax.swing.JTextField();
+        NationalID = new javax.swing.JTextField();
+        BirthDate = new com.toedter.calendar.JDateChooser();
+        EMail = new javax.swing.JTextField();
+        ApartementNumber = new javax.swing.JTextField();
+        StreetNumber = new javax.swing.JTextField();
+        City = new javax.swing.JTextField();
+        PhoneNumber = new javax.swing.JTextField();
+        AddPhoneNumber = new javax.swing.JLabel();
+        AnotherPhoneNumberTextField = new javax.swing.JTextField();
+        AnottherPhoneNumber = new javax.swing.JLabel();
+        Save = new javax.swing.JLabel();
+        InformationBackground = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -284,7 +309,159 @@ public class Customer extends javax.swing.JFrame {
         Settings.setMinimumSize(new java.awt.Dimension(1320, 750));
         Settings.setOpaque(false);
         Settings.setPreferredSize(new java.awt.Dimension(1320, 750));
+        Settings.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/profile 2.png"))); // NOI18N
+        Settings.add(Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, -1, -1));
+
+        ChangeProfileInfo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ChangeProfileInfoMouseClicked(evt);
+            }
+        });
+        Settings.add(ChangeProfileInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 25, 470, 160));
+
+        ChangePassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ChangePasswordMouseClicked(evt);
+            }
+        });
+        Settings.add(ChangePassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 450, 160));
+
+        AddComplaint.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AddComplaintMouseClicked(evt);
+            }
+        });
+        Settings.add(AddComplaint, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 20, 460, 170));
+
+        Feedback.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FeedbackMouseClicked(evt);
+            }
+        });
+        Settings.add(Feedback, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 270, 450, 170));
+
+        LogOut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LogOutMouseClicked(evt);
+            }
+        });
+        Settings.add(LogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 500, 460, 170));
+
+        SettingsBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Settings.png"))); // NOI18N
+        Settings.add(SettingsBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, -1));
+
         jTabbedPane1.addTab("tab2", Settings);
+
+        Profile.setMaximumSize(new java.awt.Dimension(1320, 750));
+        Profile.setMinimumSize(new java.awt.Dimension(1320, 750));
+        Profile.setOpaque(false);
+        Profile.setPreferredSize(new java.awt.Dimension(1320, 750));
+        Profile.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        FirstName.setBackground(new java.awt.Color(255, 255, 255));
+        FirstName.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        FirstName.setForeground(new java.awt.Color(0, 138, 188));
+        FirstName.setBorder(null);
+        Profile.add(FirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 260, 40));
+
+        MiddleName.setBackground(new java.awt.Color(255, 255, 255));
+        MiddleName.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        MiddleName.setForeground(new java.awt.Color(0, 138, 188));
+        MiddleName.setBorder(null);
+        MiddleName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MiddleNameActionPerformed(evt);
+            }
+        });
+        Profile.add(MiddleName, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 260, 30));
+
+        LastName.setBackground(new java.awt.Color(255, 255, 255));
+        LastName.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        LastName.setForeground(new java.awt.Color(0, 138, 188));
+        LastName.setBorder(null);
+        Profile.add(LastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 260, 40));
+
+        UserNameCustomer.setBackground(new java.awt.Color(255, 255, 255));
+        UserNameCustomer.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        UserNameCustomer.setForeground(new java.awt.Color(0, 138, 188));
+        UserNameCustomer.setBorder(null);
+        Profile.add(UserNameCustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, 260, 40));
+
+        PasswordCustomer.setBackground(new java.awt.Color(255, 255, 255));
+        PasswordCustomer.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        PasswordCustomer.setForeground(new java.awt.Color(0, 138, 188));
+        PasswordCustomer.setBorder(null);
+        Profile.add(PasswordCustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, 260, 30));
+
+        NationalID.setBackground(new java.awt.Color(255, 255, 255));
+        NationalID.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        NationalID.setForeground(new java.awt.Color(0, 138, 188));
+        NationalID.setBorder(null);
+        Profile.add(NationalID, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, 260, 40));
+
+        BirthDate.setBackground(new java.awt.Color(255, 255, 255));
+        BirthDate.setForeground(new java.awt.Color(0, 138, 188));
+        Profile.add(BirthDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 480, 300, 50));
+
+        EMail.setBackground(new java.awt.Color(255, 255, 255));
+        EMail.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        EMail.setForeground(new java.awt.Color(0, 138, 188));
+        EMail.setBorder(null);
+        Profile.add(EMail, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 560, 600, 30));
+
+        ApartementNumber.setBackground(new java.awt.Color(255, 255, 255));
+        ApartementNumber.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        ApartementNumber.setForeground(new java.awt.Color(0, 138, 188));
+        ApartementNumber.setBorder(null);
+        Profile.add(ApartementNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 110, 260, 30));
+
+        StreetNumber.setBackground(new java.awt.Color(255, 255, 255));
+        StreetNumber.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        StreetNumber.setForeground(new java.awt.Color(0, 138, 188));
+        StreetNumber.setBorder(null);
+        Profile.add(StreetNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 160, 260, 40));
+
+        City.setBackground(new java.awt.Color(255, 255, 255));
+        City.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        City.setForeground(new java.awt.Color(0, 138, 188));
+        City.setBorder(null);
+        Profile.add(City, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 230, 260, 30));
+
+        PhoneNumber.setBackground(new java.awt.Color(255, 255, 255));
+        PhoneNumber.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        PhoneNumber.setForeground(new java.awt.Color(0, 138, 188));
+        PhoneNumber.setBorder(null);
+        Profile.add(PhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 360, 260, 30));
+
+        AddPhoneNumber.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AddPhoneNumberMouseClicked(evt);
+            }
+        });
+        Profile.add(AddPhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 420, 140, 60));
+
+        AnotherPhoneNumberTextField.setBackground(new java.awt.Color(255, 255, 255));
+        AnotherPhoneNumberTextField.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        AnotherPhoneNumberTextField.setForeground(new java.awt.Color(0, 138, 188));
+        AnotherPhoneNumberTextField.setBorder(null);
+        Profile.add(AnotherPhoneNumberTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 500, 260, 30));
+
+        AnottherPhoneNumber.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Another Phone Number.png"))); // NOI18N
+        Profile.add(AnottherPhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 490, -1, -1));
+
+        Save.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SaveMouseClicked(evt);
+            }
+        });
+        Profile.add(Save, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 620, 140, 60));
+
+        InformationBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Information.png"))); // NOI18N
+        Profile.add(InformationBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+
+        jTabbedPane1.addTab("tab2", Profile);
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, -1));
 
@@ -389,6 +566,8 @@ public class Customer extends javax.swing.JFrame {
         NavAccounts.setForeground(gray);
         NavSettings.setForeground(blue);
         NavSettings.setText("Settings");
+        AnotherPhoneNumberTextField.setVisible(false);
+        AnottherPhoneNumber.setVisible(false);
 
     }//GEN-LAST:event_NavSettingsMouseClicked
 
@@ -408,6 +587,48 @@ public class Customer extends javax.swing.JFrame {
         NavSettings.setText("Settings");
 
     }//GEN-LAST:event_NavSettingsMouseExited
+
+    private void MiddleNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MiddleNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MiddleNameActionPerformed
+
+    private void SaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveMouseClicked
+       
+        jTabbedPane1.setSelectedIndex(3);
+    }//GEN-LAST:event_SaveMouseClicked
+
+    private void AddPhoneNumberMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddPhoneNumberMouseClicked
+       
+        AnotherPhoneNumberTextField.setVisible(true);
+        AnottherPhoneNumber.setVisible(true);
+    }//GEN-LAST:event_AddPhoneNumberMouseClicked
+
+    private void ChangeProfileInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ChangeProfileInfoMouseClicked
+        
+        jTabbedPane1.setSelectedIndex(4);                        
+    }//GEN-LAST:event_ChangeProfileInfoMouseClicked
+
+    private void ChangePasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ChangePasswordMouseClicked
+        ChangePasswordCustomer frame = new ChangePasswordCustomer();
+        frame.setVisible(true);
+    }//GEN-LAST:event_ChangePasswordMouseClicked
+
+    private void AddComplaintMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddComplaintMouseClicked
+        
+        AddComplaintCustomer frame = new AddComplaintCustomer();
+        frame.setVisible(true);
+    }//GEN-LAST:event_AddComplaintMouseClicked
+
+    private void LogOutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutMouseClicked
+        
+        Login frame = new Login();
+         frame.setVisible(true);
+    }//GEN-LAST:event_LogOutMouseClicked
+
+    private void FeedbackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FeedbackMouseClicked
+        Feedback frame = new Feedback();
+        frame.setVisible(true);
+    }//GEN-LAST:event_FeedbackMouseClicked
 
     /**
      * @param args the command line arguments
@@ -431,11 +652,29 @@ public class Customer extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Acounts;
+    private javax.swing.JLabel AddComplaint;
+    private javax.swing.JLabel AddPhoneNumber;
+    private javax.swing.JTextField AnotherPhoneNumberTextField;
+    private javax.swing.JLabel AnottherPhoneNumber;
+    private javax.swing.JTextField ApartementNumber;
     private javax.swing.JPanel Bills;
     private javax.swing.JLabel BillsNumberCard;
     private javax.swing.JTable BillsTable;
+    private com.toedter.calendar.JDateChooser BirthDate;
+    private javax.swing.JLabel ChangePassword;
+    private javax.swing.JLabel ChangeProfileInfo;
+    private javax.swing.JTextField City;
     private javax.swing.JPanel Dashboard;
     private javax.swing.JTable DashboardTable;
+    private javax.swing.JTextField EMail;
+    private javax.swing.JLabel Feedback;
+    private javax.swing.JTextField FirstName;
+    private javax.swing.JLabel Icon;
+    private javax.swing.JLabel InformationBackground;
+    private javax.swing.JTextField LastName;
+    private javax.swing.JLabel LogOut;
+    private javax.swing.JTextField MiddleName;
+    private javax.swing.JTextField NationalID;
     private javax.swing.JLabel NavAccounts;
     private javax.swing.JPanel NavBar;
     private javax.swing.JLabel NavBills;
@@ -443,7 +682,13 @@ public class Customer extends javax.swing.JFrame {
     private javax.swing.JLabel NavSettings;
     private javax.swing.JLabel NumberOfBills;
     private javax.swing.JLabel NunberOfBills;
+    private javax.swing.JTextField PasswordCustomer;
+    private javax.swing.JTextField PhoneNumber;
+    private javax.swing.JPanel Profile;
+    private javax.swing.JLabel Save;
     private javax.swing.JPanel Settings;
+    private javax.swing.JLabel SettingsBackground;
+    private javax.swing.JTextField StreetNumber;
     private javax.swing.JLabel TotalCost;
     private javax.swing.JLabel TotalCostCard;
     private javax.swing.JLabel TotalCostOfBills;
@@ -451,6 +696,7 @@ public class Customer extends javax.swing.JFrame {
     private javax.swing.JLabel TotalNumberOfBillsCard;
     private javax.swing.JPanel TrickeyPanel;
     private javax.swing.JLabel UserName;
+    private javax.swing.JTextField UserNameCustomer;
     private javax.swing.JLabel background;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

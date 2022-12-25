@@ -285,9 +285,9 @@ public class Login extends javax.swing.JFrame {
         try
         {
             UIManager.setLookAndFeel(new FlatLightLaf());
+
         }
-        catch (Exception ex)
-        {
+        catch (Exception ex) {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         

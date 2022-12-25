@@ -635,13 +635,16 @@ public class Administrator extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
 
-        try {
+        try
+        {
             UIManager.setLookAndFeel(new FlatLightLaf());
 
-        } catch (Exception ex) {
+        }
+        catch (Exception ex) {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-
+        
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

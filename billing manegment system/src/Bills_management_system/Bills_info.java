@@ -6,6 +6,7 @@
 package Bills_management_system;
 
 import com.formdev.flatlaf.FlatDarkLaf;
+import com.formdev.flatlaf.FlatLightLaf;
 import javax.swing.UIManager;
 
 /**
@@ -94,10 +95,11 @@ public class Bills_info extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        try{
-                        UIManager.setLookAndFeel(new FlatDarkLaf());
+        try
+        {
+            UIManager.setLookAndFeel(new FlatLightLaf());
 
-            }
+        }
         catch (Exception ex) {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
