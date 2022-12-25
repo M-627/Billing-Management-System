@@ -77,6 +77,7 @@ public class Customer extends javax.swing.JFrame {
         Icon = new javax.swing.JLabel();
         ChangeProfileInfo = new javax.swing.JLabel();
         ChangePassword = new javax.swing.JLabel();
+        CrediCards = new javax.swing.JLabel();
         AddComplaint = new javax.swing.JLabel();
         Feedback = new javax.swing.JLabel();
         LogOut = new javax.swing.JLabel();
@@ -327,6 +328,14 @@ public class Customer extends javax.swing.JFrame {
             }
         });
         Settings.add(ChangePassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 450, 160));
+
+        CrediCards.setToolTipText("");
+        CrediCards.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CrediCardsMouseClicked(evt);
+            }
+        });
+        Settings.add(CrediCards, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 500, 460, 170));
 
         AddComplaint.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -630,6 +639,11 @@ public class Customer extends javax.swing.JFrame {
         frame.setVisible(true);
     }//GEN-LAST:event_FeedbackMouseClicked
 
+    private void CrediCardsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrediCardsMouseClicked
+        CreditCardCustomer frame = new CreditCardCustomer();
+        frame.setVisible(true);
+    }//GEN-LAST:event_CrediCardsMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -664,6 +678,7 @@ public class Customer extends javax.swing.JFrame {
     private javax.swing.JLabel ChangePassword;
     private javax.swing.JLabel ChangeProfileInfo;
     private javax.swing.JTextField City;
+    private javax.swing.JLabel CrediCards;
     private javax.swing.JPanel Dashboard;
     private javax.swing.JTable DashboardTable;
     private javax.swing.JTextField EMail;

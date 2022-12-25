@@ -47,7 +47,6 @@ public class ComplaintInfo extends javax.swing.JFrame {
         setMaximumSize(new java.awt.Dimension(681, 681));
         setMinimumSize(new java.awt.Dimension(681, 681));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(681, 681));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Panel.setBackground(new java.awt.Color(255, 255, 255));
