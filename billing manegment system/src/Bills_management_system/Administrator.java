@@ -310,21 +310,31 @@ public class Administrator extends javax.swing.JFrame {
 
         UploadedDate.setBackground(new java.awt.Color(255, 255, 255));
         UploadedDate.setForeground(new java.awt.Color(0, 138, 188));
+        UploadedDate.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                UploadedDatePropertyChange(evt);
+            }
+        });
         Bills.add(UploadedDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 290, 50));
 
         TotalCostTextField.setBackground(new java.awt.Color(255, 255, 255));
         TotalCostTextField.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         TotalCostTextField.setForeground(new java.awt.Color(0, 138, 188));
         TotalCostTextField.setBorder(null);
+        TotalCostTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TotalCostTextFieldKeyReleased(evt);
+            }
+        });
         Bills.add(TotalCostTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 120, 210, 40));
 
         SearchBillsTextField.setBackground(new java.awt.Color(255, 255, 255));
         SearchBillsTextField.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         SearchBillsTextField.setForeground(new java.awt.Color(0, 138, 188));
         SearchBillsTextField.setBorder(null);
-        SearchBillsTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SearchBillsTextFieldActionPerformed(evt);
+        SearchBillsTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                SearchBillsTextFieldKeyReleased(evt);
             }
         });
         Bills.add(SearchBillsTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, 790, 40));
@@ -597,14 +607,6 @@ public class Administrator extends javax.swing.JFrame {
              jTabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_ArchieveMouseClicked
 
-    private void SearchBillsTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchBillsTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SearchBillsTextFieldActionPerformed
-
-    private void UnpaidRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UnpaidRadioButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UnpaidRadioButtonActionPerformed
-
     private void LogOutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutMouseClicked
         
         this.dispose();
@@ -640,10 +642,50 @@ public class Administrator extends javax.swing.JFrame {
     }//GEN-LAST:event_SaveButtonMouseClicked
 
     private void CustomerIdTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CustomerIdTextFieldKeyReleased
+        String cID = CustomerIdTextField.getText();
+        java.util.Date date = UploadedDate.getDate();
+        boolean status = UnpaidRadioButton.isSelected();
+        String cost = TotalCostTextField.getText();
+        String bID = SearchBillsTextField.getText();
         
-        BillsTable.setModel(DbUtils.resultSetToTableModel(ctlr.customerIDBills(CustomerIdTextField.getText())));
-        
+        if (date == null)
+            BillsTable.setModel
+            (DbUtils.resultSetToTableModel(ctlr.filterBills(bID, null, status, cost, bID)));
+        else
+        {
+            java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+            BillsTable.setModel
+            (DbUtils.resultSetToTableModel(ctlr.filterBills(bID, sqlDate, status, cost, bID)));
+        }
     }//GEN-LAST:event_CustomerIdTextFieldKeyReleased
+
+    private void UploadedDatePropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_UploadedDatePropertyChange
+        
+        java.awt.event.KeyEvent dummy = null;
+        
+        CustomerIdTextFieldKeyReleased(dummy);
+        
+    }//GEN-LAST:event_UploadedDatePropertyChange
+
+    private void UnpaidRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UnpaidRadioButtonActionPerformed
+        
+        java.awt.event.KeyEvent dummy = null;
+        
+        CustomerIdTextFieldKeyReleased(dummy);
+        
+    }//GEN-LAST:event_UnpaidRadioButtonActionPerformed
+
+    private void TotalCostTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TotalCostTextFieldKeyReleased
+        
+        CustomerIdTextFieldKeyReleased(evt);
+        
+    }//GEN-LAST:event_TotalCostTextFieldKeyReleased
+
+    private void SearchBillsTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SearchBillsTextFieldKeyReleased
+        
+        CustomerIdTextFieldKeyReleased(evt);
+        
+    }//GEN-LAST:event_SearchBillsTextFieldKeyReleased
 
     /**
      * @param args the command line arguments

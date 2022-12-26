@@ -36,13 +36,14 @@ public class AdministratorController extends dataConnection
         return userName;
     }
     
+    
     public ResultSet getBills()
     {
         try
         {
             getConnected("Select * from Bills");
             command = con.prepareStatement("Select dbo.Bills.BillID, dbo.Users.FirstName, dbo.Users.Last_Name, "
-                    + "dbo.Customer.NationalID, dbo.Bills.UploadingDate, dbo.Bills.Status, "
+                    + "dbo.Customer.NationalID, dbo.Bills.TotalCost, dbo.Bills.UploadingDate, dbo.Bills.Status, "
                     + "dbo.Bills.PaymentDate from dbo.Bills Inner Join dbo.Administrator on "
                     + "dbo.Administrator.CompanyID = dbo.Bills.CompanyID Inner Join dbo.Account on "
                     + "dbo.Account.CompanyID = dbo.Administrator.CompanyID Inner Join dbo.Customer on "
@@ -58,11 +59,29 @@ public class AdministratorController extends dataConnection
         return res;
     }
     
-    public ResultSet filterBills(String query)
-    {   
-        String and = "";
-        if (!query.isEmpty())
-            and = " AND ";
+    
+    public ResultSet filterBills(String nat, Date date, boolean status, String cost, String bill )
+    {
+        String natPart = " AND dbo.Customer.NationalID = ?";
+        String datePart = " AND dbo.Bills.UploadingDate = ?";
+        String statusPart = " AND dbo.Bills.Status = ?";
+        String costPart = " AND dbo.Bills.TotalCost = ?";
+        String billPart = " AND dbo.Bills.BillID = ?";
+        
+        if (nat.isEmpty())
+            natPart = "";
+        
+        if (date == null)
+            datePart = "";
+        
+        if (!status)
+            statusPart = "";
+        
+        if (cost.isEmpty())
+            costPart = "";
+        
+        if (bill.isEmpty())
+            billPart = "";
                 
         try
         {
@@ -73,21 +92,32 @@ public class AdministratorController extends dataConnection
                     + "dbo.Administrator.CompanyID = dbo.Bills.CompanyID Inner Join dbo.Account on "
                     + "dbo.Account.CompanyID = dbo.Administrator.CompanyID Inner Join dbo.Customer on "
                     + "dbo.Customer.UserID = dbo.Account.UserID Inner Join dbo.Users on "
-                    + "dbo.Users.UserID = dbo.Customer.UserID Where dbo.Administrator.UserID = ?" + and + query);
+                    + "dbo.Users.UserID = dbo.Customer.UserID Where dbo.Administrator.UserID = ?" 
+                    + natPart + datePart + statusPart + costPart + billPart);
             command.setInt(1, CurrentUser.usrid);
+            
+            int i = 1;
+            if(!nat.isEmpty())
+                command.setInt(++i, Integer.parseInt(nat));
+            
+            if(date != null)
+                command.setDate(++i, (java.sql.Date) date);
+            
+            if(status)
+                command.setString(++i, "Unpaid");
+            
+            if(!cost.isEmpty())
+                command.setInt(++i, Integer.parseInt(cost));
+            
+            if(!bill.isEmpty())
+                command.setInt(++i, Integer.parseInt(bill));
+            
             res = command.executeQuery();
         }
         catch(SQLException e)
         {
             e.printStackTrace();
         }
-        return res;
-    }
-    
-    public ResultSet customerIDBills(String input)
-    {
-        String query = "' " + input + " '";
-        res = filterBills("dbo.Customer.NationalID = " + query);
         return res;
     }
 }
