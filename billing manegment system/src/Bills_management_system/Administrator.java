@@ -6,9 +6,11 @@
 package Bills_management_system;
 
 import com.formdev.flatlaf.*;
+import java.util.Date;
 import java.awt.Color;
 import javax.swing.UIManager;
 import java.awt.BorderLayout;
+import net.proteanit.sql.DbUtils;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -26,10 +28,10 @@ public class Administrator extends javax.swing.JFrame {
      */
     public Administrator() {
         initComponents();
+        UserName.setText(ctlr.setAdministrator());
     }
     
-    //Current user - Prepare in controller
-    private int usrid = CurrentUser.usrid;
+    AdministratorController ctlr = new AdministratorController();
     
     public void showPieChart() {
     }    
@@ -299,6 +301,11 @@ public class Administrator extends javax.swing.JFrame {
         CustomerIdTextField.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         CustomerIdTextField.setForeground(new java.awt.Color(0, 138, 188));
         CustomerIdTextField.setBorder(null);
+        CustomerIdTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                CustomerIdTextFieldKeyReleased(evt);
+            }
+        });
         Bills.add(CustomerIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, 750, 40));
 
         UploadedDate.setBackground(new java.awt.Color(255, 255, 255));
@@ -538,6 +545,8 @@ public class Administrator extends javax.swing.JFrame {
         NavDashboard.setForeground(gray);
         NavSettings.setForeground(gray);
         NavBills.setText("Bills");
+        
+        BillsTable.setModel(DbUtils.resultSetToTableModel(ctlr.getBills()));
     }//GEN-LAST:event_NavBillsMouseClicked
 
     private void NavBillsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NavBillsMouseEntered
@@ -629,6 +638,12 @@ public class Administrator extends javax.swing.JFrame {
         
          jTabbedPane1.setSelectedIndex(3);
     }//GEN-LAST:event_SaveButtonMouseClicked
+
+    private void CustomerIdTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CustomerIdTextFieldKeyReleased
+        
+        BillsTable.setModel(DbUtils.resultSetToTableModel(ctlr.customerIDBills(CustomerIdTextField.getText())));
+        
+    }//GEN-LAST:event_CustomerIdTextFieldKeyReleased
 
     /**
      * @param args the command line arguments
