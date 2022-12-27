@@ -26,7 +26,7 @@ public class Customer extends javax.swing.JFrame {
     public void showPieChart() {} /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     CustomerController ctlr = new CustomerController();
-        
+    public static int choose2;    
     // Colors  global variables
     private int choose = 1;
     Color blue = Color.decode("#008ABC");
@@ -73,7 +73,6 @@ public class Customer extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         BillsTable = new javax.swing.JTable();
         panelBarChart1 = new javax.swing.JPanel();
-        Acounts = new javax.swing.JPanel();
         Settings = new javax.swing.JPanel();
         Icon = new javax.swing.JLabel();
         ChangeProfileInfo = new javax.swing.JLabel();
@@ -83,6 +82,25 @@ public class Customer extends javax.swing.JFrame {
         Feedback = new javax.swing.JLabel();
         LogOut = new javax.swing.JLabel();
         SettingsBackground = new javax.swing.JLabel();
+        Acounts = new javax.swing.JPanel();
+        ElecVIew = new javax.swing.JLabel();
+        ElecAdd = new javax.swing.JLabel();
+        ElecCard = new javax.swing.JLabel();
+        WaterView = new javax.swing.JLabel();
+        WaterAdd = new javax.swing.JLabel();
+        WaterCard = new javax.swing.JLabel();
+        GasView = new javax.swing.JLabel();
+        GasAdd = new javax.swing.JLabel();
+        GasCard = new javax.swing.JLabel();
+        DrinkAdd = new javax.swing.JLabel();
+        DrinkView = new javax.swing.JLabel();
+        DrinkCard = new javax.swing.JLabel();
+        NetAdd = new javax.swing.JLabel();
+        NetView = new javax.swing.JLabel();
+        NetCard = new javax.swing.JLabel();
+        TeleView = new javax.swing.JLabel();
+        TeleAdd = new javax.swing.JLabel();
+        TeleCard = new javax.swing.JLabel();
         Profile = new javax.swing.JPanel();
         FirstName = new javax.swing.JTextField();
         MiddleName = new javax.swing.JTextField();
@@ -301,12 +319,6 @@ public class Customer extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("tab4", Bills);
 
-        Acounts.setMaximumSize(new java.awt.Dimension(1320, 750));
-        Acounts.setMinimumSize(new java.awt.Dimension(1320, 750));
-        Acounts.setOpaque(false);
-        Acounts.setPreferredSize(new java.awt.Dimension(1320, 750));
-        jTabbedPane1.addTab("tab5", Acounts);
-
         Settings.setMaximumSize(new java.awt.Dimension(1320, 750));
         Settings.setMinimumSize(new java.awt.Dimension(1320, 750));
         Settings.setOpaque(false);
@@ -363,6 +375,80 @@ public class Customer extends javax.swing.JFrame {
         Settings.add(SettingsBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, -1));
 
         jTabbedPane1.addTab("tab2", Settings);
+
+        Acounts.setMaximumSize(new java.awt.Dimension(1320, 750));
+        Acounts.setMinimumSize(new java.awt.Dimension(1320, 750));
+        Acounts.setOpaque(false);
+        Acounts.setPreferredSize(new java.awt.Dimension(1320, 750));
+        Acounts.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        ElecVIew.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ElecVIewMouseClicked(evt);
+            }
+        });
+        Acounts.add(ElecVIew, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 150, 60, 30));
+        Acounts.add(ElecAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, 60, 30));
+
+        ElecCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Electricity card.png"))); // NOI18N
+        Acounts.add(ElecCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 530, 170));
+
+        WaterView.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                WaterViewMouseClicked(evt);
+            }
+        });
+        Acounts.add(WaterView, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 370, 60, 30));
+        Acounts.add(WaterAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 370, 60, 30));
+
+        WaterCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Water card.png"))); // NOI18N
+        Acounts.add(WaterCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 500, 170));
+
+        GasView.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GasViewMouseClicked(evt);
+            }
+        });
+        Acounts.add(GasView, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 600, 60, 30));
+        Acounts.add(GasAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 600, 60, 30));
+
+        GasCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Gas card.png"))); // NOI18N
+        Acounts.add(GasCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, 530, 170));
+        Acounts.add(DrinkAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 150, 60, 30));
+
+        DrinkView.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DrinkViewMouseClicked(evt);
+            }
+        });
+        Acounts.add(DrinkView, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 150, 60, 30));
+
+        DrinkCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Drinking water card.png"))); // NOI18N
+        Acounts.add(DrinkCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 20, 500, 190));
+        Acounts.add(NetAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 370, 60, 30));
+
+        NetView.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                NetViewMouseClicked(evt);
+            }
+        });
+        Acounts.add(NetView, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 370, 60, 30));
+
+        NetCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Internet card.png"))); // NOI18N
+        Acounts.add(NetCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 250, 530, 170));
+
+        TeleView.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TeleViewMouseClicked(evt);
+            }
+        });
+        Acounts.add(TeleView, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 600, 60, 30));
+        Acounts.add(TeleAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 600, 60, 30));
+
+        TeleCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/figma_design/Telephone card.png"))); // NOI18N
+        Acounts.add(TeleCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 480, 530, 170));
+
+        jTabbedPane1.addTab("tab5", Acounts);
 
         Profile.setMaximumSize(new java.awt.Dimension(1320, 750));
         Profile.setMinimumSize(new java.awt.Dimension(1320, 750));
@@ -649,6 +735,48 @@ public class Customer extends javax.swing.JFrame {
         frame.setVisible(true);
     }//GEN-LAST:event_CrediCardsMouseClicked
 
+    private void ElecVIewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ElecVIewMouseClicked
+        // TODO add your handling code here:
+        choose2=0;
+        ViewCards frame=new ViewCards ();
+        frame.setVisible (true);
+    }//GEN-LAST:event_ElecVIewMouseClicked
+
+    private void WaterViewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WaterViewMouseClicked
+        // TODO add your handling code here:
+        choose2=1;
+        ViewCards frame=new ViewCards ();
+        frame.setVisible (true);
+    }//GEN-LAST:event_WaterViewMouseClicked
+
+    private void GasViewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GasViewMouseClicked
+        // TODO add your handling code here:
+        choose2=2;
+        ViewCards frame=new ViewCards ();
+        frame.setVisible (true);
+    }//GEN-LAST:event_GasViewMouseClicked
+
+    private void DrinkViewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DrinkViewMouseClicked
+        choose2=3;
+        ViewCards frame=new ViewCards ();
+        frame.setVisible (true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DrinkViewMouseClicked
+
+    private void NetViewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NetViewMouseClicked
+        choose2=4;
+        ViewCards frame=new ViewCards ();
+        frame.setVisible (true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NetViewMouseClicked
+
+    private void TeleViewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TeleViewMouseClicked
+        choose2=5;
+        ViewCards frame=new ViewCards ();
+        frame.setVisible (true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TeleViewMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -686,9 +814,18 @@ public class Customer extends javax.swing.JFrame {
     private javax.swing.JLabel CrediCards;
     private javax.swing.JPanel Dashboard;
     private javax.swing.JTable DashboardTable;
+    private javax.swing.JLabel DrinkAdd;
+    private javax.swing.JLabel DrinkCard;
+    private javax.swing.JLabel DrinkView;
     private javax.swing.JTextField EMail;
+    private javax.swing.JLabel ElecAdd;
+    private javax.swing.JLabel ElecCard;
+    private javax.swing.JLabel ElecVIew;
     private javax.swing.JLabel Feedback;
     private javax.swing.JTextField FirstName;
+    private javax.swing.JLabel GasAdd;
+    private javax.swing.JLabel GasCard;
+    private javax.swing.JLabel GasView;
     private javax.swing.JLabel Icon;
     private javax.swing.JLabel InformationBackground;
     private javax.swing.JTextField LastName;
@@ -700,6 +837,9 @@ public class Customer extends javax.swing.JFrame {
     private javax.swing.JLabel NavBills;
     private javax.swing.JLabel NavDashboard;
     private javax.swing.JLabel NavSettings;
+    private javax.swing.JLabel NetAdd;
+    private javax.swing.JLabel NetCard;
+    private javax.swing.JLabel NetView;
     private javax.swing.JLabel NumberOfBills;
     private javax.swing.JLabel NunberOfBills;
     private javax.swing.JTextField PasswordCustomer;
@@ -709,6 +849,9 @@ public class Customer extends javax.swing.JFrame {
     private javax.swing.JPanel Settings;
     private javax.swing.JLabel SettingsBackground;
     private javax.swing.JTextField StreetNumber;
+    private javax.swing.JLabel TeleAdd;
+    private javax.swing.JLabel TeleCard;
+    private javax.swing.JLabel TeleView;
     private javax.swing.JLabel TotalCost;
     private javax.swing.JLabel TotalCostCard;
     private javax.swing.JLabel TotalCostOfBills;
@@ -717,6 +860,9 @@ public class Customer extends javax.swing.JFrame {
     private javax.swing.JPanel TrickeyPanel;
     private javax.swing.JLabel UserName;
     private javax.swing.JTextField UserNameCustomer;
+    private javax.swing.JLabel WaterAdd;
+    private javax.swing.JLabel WaterCard;
+    private javax.swing.JLabel WaterView;
     private javax.swing.JLabel background;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
